@@ -1,0 +1,2138 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="Minhas Finanças">
+<title>Minhas Finanças</title>
+<link rel="apple-touch-icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAgAAAAIACAIAAAB7GkOtAAAMwklEQVR4nO3dsXXcxhqGYdJHfShWEU5dgWqQQxWgmEWYpTh1EexCkY5iB9BZUdRyuQsMZv7B9zzpvVcX5ll8LwZrSfffv3294xYfvnwafQnAeU8Pj6MvYSb3AvAaQw+HIQxnCcBPFh9C6MEiPQBGH8IlxyAxAEYfOCstBkEBsPvAlUJKcPwA2H1gtWOX4LABsPtAQ4cswQEDYPqBnRwsA8cJgN0HujlGCY4QANMPDDF7BuYOgOkHhps3A7MGwPQDpcyYgfkCYPqBsubKwEwBMP3AFGbJwB+jL+Ba1h+YxSx7NcEJYJYfJcALxY8CpQNg+oEDKJuBuq+ArD9wDGXXrOIJoOwPC2CLakeBcicA6w8cVbV9qxWAaj8dgLZKrVyVV0ClfigAe6vwOqjECcD6A2kq7N74AFT4KQD0N3z9Rr4CGv4PD1DBqNdBw04A1h9gMWoPxwTA+gM8N2QVBwTA+gP8rv829g6A9Qd4TeeF7BoA6w9wWc+d7BcA6w9wjW5r2SkA1h/gen02s0cArD/ArTos5+4BsP4A6+y9n/sGwPoDbLHriu4YAOsPsN1+W7pXAKw/QCs7LeouAbD+AG3tsavtA2D9AfbQfF0bB8D6A+yn7ca2DID1B9hbw6Ud/zeCATBEswB4/Afoo9XetgmA9QfoqcnqNgiA9Qfob/v2+g4AINTWAHj8Bxhl4wJvCoD1Bxhryw6vD4D1B6hg9Rr7DgAg1MoAePwHqGPdJq8JgPUHqGbFMnsFBBDq5gB4/Aeo6dZ9dgIACHVbADz+A1R200rfEADrD1Df9VvtFRBAqGsD4PEfYBZXLrYTAECoqwLg8R9gLtfsthMAQKi3A+DxH2BGb663EwBAqDcC4PEfYF6XN9wJACDUpQB4/AeY3YUldwIACCUAAKFeDYD3PwDH8NqeOwEAhDofAI//AEdydtWdAABCCQBAqDMB8P4H4Hh+33YnAIBQAgAQ6mUAvP8BOKoXC+8EABBKAABC/RIA738Aju35zjsBAIQSAIBQAgAQ6mcAfAEAkOC09k4AAKEEACCUAACE+hEAXwAA5Fg23wkAIJQAAIQSAIBQAgAQ6v77t6++AQYI5AQAEEoAAEIJAEAoAQAIJQAAoQQAIJQAAIS6f//54+hrAGAAJwCAUAIAEEoAAEIJAEAoAQAIJQAAoQQAIJQAAIQSAIBQAgAQSgAAQgkAQCgBAAglAAChBAAglAAAhBIAgFACABBKAABCCQBAKAEACCUAAKEEACCUAACEEgCAUAIAEEoAAEIJAEAoAQAIJQAAoQQAIJQAAIQSAIBQAgAQSgAAQgkAQCgBAAglAAChBAAglAAAhHo3+gKO6enhcfQlwNF8+PJp9CUczf37zx9HX8Nx2H3oQAlaEYA2TD90JgPb+Q6gAesP/bnvthOArXwKYRR330YCsInPH4zlHtxCANbzyYMK3ImrCcBKPnNQh/txHQEACCUAa3jcgGrclSsIAEAoAQAIJQA3c9KEmtybtxIAgFACABBKAABCCQBAKAEACCUAAKEEACCUAACEEgCAUAIAEEoAAEIJAEAoAQAIJQAAoQQAIJQAAIQSAIBQAnCzD18+jb4E4Az35q0EACCUAACEEoA1nDShGnflCgIATM/6ryMAK/nAAbMTgPU0ACpwJ64mAJv45MFY7sEtBGArnz8Yxd23kQA04FMI/bnvthOABp4eHkdfAsRx320nAFv5FMIo7r6NBAAglABs4gEExnIPbiEA6/nkQQXuxNUEACCUAKzkoQPqcD+uIwAAoQRgDY8bUI27cgUBAAglAAChBAAglADczKtGqMm9eSsBAAglAAChBAAglAAAhBIAgFACABBKAABCCQBAKAEACCUAAKEEACCUAACEEgCAUAIAEEoAAEIJAEAoAQAIJQAAoQQAIJQAAIQSAIBQAgAQSgAAQgkAQCgBAAglAAChBAAglAAAhBIAgFACABBKAABCCQBAKAEACCUAAKEEACCUAACEEgCAUAIAEEoAAEIJAEAoAQAIJQAAoQQAIJQAAIQSAIBQAgAQSgAAQgkAQCgBAAglAAChBAAglAAAhHo3+gKA6v7958/X/qO//v6v55XQlgAAZ1wY/df+a2IwHQEAfnHl9L/2P5SBiQgA8MPq6f/9F5GBKfgSGLi7a7T+O/1q7EQAgF32WgPq8woIou06014HFecEALn6PKQ7CpQlAAChBABC9XwwdwioSQAgUf9F1oCCBADijNpiDahGAABCCQBkGfsY7hBQigAAhBIACFLhAbzCNbAQAIBQAgAQSgAAQgkApKjz8r3OlYQTAIBQAgAQSgAAQgkAQCgBAAglAAChBAAglAAAhBIASPHX3/+NvoQf6lxJOAEACCUAAKEEACCUAECQCi/fK1wDCwEACCUAkGXsA7jH/1IEACCUAECcUY/hHv+rEQBI1H+LrX9BAgChei6y9a9JAABCCQDk6vNg7vG/rHejLwAYaVnnf//5c79fnLKcAIBdltr61ycAwN1d6722/lPwCgj4ocnrINM/EQEAfrE6A6Z/OgIAnPF8zS/EwOhPTQCAN1j5o/IlMEAoAQAIJQAAoQQAIJQAAIQSAIBQAgAQSgAAQgkAQCgBAAglAAChBAAglAAAhBIAgFACABBKAABCCQBAKAEACCUAAKEEACCUAACEEgCAUAIAEEoAAEIJAEAoAQAIJQAAoQQAIJQAAIQSAIBQAgAQSgAAQgkAQCgBAAglAAChBAAglAAAhBIAgFACABBKAABCCQBAKAEACCUAAKEEACCUAACEEgCAUAIAEEoAAEIJAEAoAQAIJQAAoQQAIJQAAIQSgJt9+PJp9CUAZ7g3byUAAKEEACCUAKzhpAnVuCtXEACAUAIAEEoAVnLehDrcj+sIAEAoAVjPQwdU4E5cTQA28cmDsdyDWwgAMCvrv5EAbOUjCExKABrQAOjPfbedALThswg9ueOaEIBmfCKhD/daK/fvP38cfQ2H8vTwOPoS4LBMf1sCsAsZgOasf3NeAe3CJxXack/twQlgX44CsJHp348A9CADcCu734EA9CYGcIHd70kAAEL5EhgglAAAhBIAgFACABBKAABCCQBAKAEACCUAAKEEACCUAACEEgCAUAIAEEoAAEIJAEAoAQAIJQAAoQQAIJQAAIQSAIBQAgAQSgAAQgkAQCgBAAglAAChBAAglAAAhBIAgFACABBKAABCCQBAKAEACCUAAKEEACCUAACEEgCAUAIAEEoAAEIJAEAoAQAIJQAAof54engcfQ0ADOAEABBKAABCCQBAKAEACCUAAKEEACCUAACE+uPu7s5vBQBI8/Tw6AQAEEoAAEIJAEAoAQAI9SMAvgcGyLFsvhMAQCgBAAglAAChfgbA1wAACU5r7wQAEEoAAEIJAECoXwLgawCAY3u+804AAKEEACDUywB4CwRwVC8W3gkAIJQAAIQ6EwBvgQCO5/dtdwIACCUAAKHOB8BbIIAjObvqTgAAoV4NgEMAwDG8tudOAAChBAAg1KUAeAsEMLsLS+4EABDqjQA4BADM6/KGOwEAhHo7AA4BADN6c72dAABCXRUAhwCAuVyz204AAKGuDYBDAMAsrlxsJwCAUDcEwCEAoL7rt/q2E4AGAFR200p7BQQQ6uYAOAQA1HTrPjsBAIRaEwCHAIBqVizzyhOABgDUsW6TvQICCLU+AA4BABWsXuNNJwANABhryw5vfQWkAQCjbFxg3wEAhGoQAIcAgP62b2+bE4AGAPTUZHWbvQLSAIA+Wu2t7wAAQrUMgEMAwN4aLm3jE4AGAOyn7ca2fwWkAQB7aL6uu3wHoAEAbe2xq3t9CawBAK3stKg7/ltAGgCw3X5buu+/BqoBAFvsuqK7/z4ADQBYZ+/97PEbwTQA4FYdlrPT7wTWAIDr9dnMfn8UhAYAXKPbWnb9s4A0AOCynjvZ+w+D0wCA13ReyAF/GqgGAPyu/zaO+eOgNQDguSGrOOzvA9AAgMWoPbz//u3rkP/jkw9fPo29AIBRxj4Kj/8bwRwFgEzD1298AO4K/BQAOquwe+NfAT3ndRBweBWmf1HiBHBS5+cCsIdSK1crAHfFfjoADVXbt1qvgJ7zOgg4jGrTvyh3Ajip+fMCuFXZNat7AjhxFAAmVXb6FxMEYCEDwESKT/+i7iugF6b4aQLczbNX05wAThwFgLJmmf7FfAFYyABQylzTv5g1AAsZAIabcfoXcwdgIQPAEPNO/+IIAVjIANDN7NO/OE4ATpQA2Mkxdv/kgAFYyADQ0MGmf3HYAJwoAbDaIXf/5PgBOFEC4ErH3v2ToACcKAFwVsjunyQG4DkxgHBpo/9cegCeEwMIkTz6zwnAq/QADsPin/U/M/XSdz59VxAAAAAASUVORK5CYII=">
+<link rel="icon" href="data:image/png;base64,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">
+<link rel="manifest" href="data:application/manifest+json,{%22name%22:%22Minhas%20Finan%C3%A7as%22,%22short_name%22:%22Finan%C3%A7as%22,%22display%22:%22standalone%22,%22start_url%22:%22.%22,%22background_color%22:%22%23F6F4EE%22,%22theme_color%22:%22%231F6F54%22}">
+<meta name="theme-color" content="#1F6F54">
+
+<script type="module">
+  // ============================================================
+  // FIREBASE — login com Google + banco de dados (Firestore)
+  // Para ativar a sincronização entre aparelhos, crie um projeto
+  // gratuito em https://console.firebase.google.com e cole aqui
+  // embaixo a configuração do seu app da web (Project settings →
+  // General → Your apps → SDK setup and configuration).
+  // Enquanto FIREBASE_CONFIG estiver com os valores de exemplo,
+  // o app funciona normalmente, só que 100% local (sem sync).
+  // ============================================================
+  const FIREBASE_CONFIG = {
+    apiKey: "AIzaSyC-jjRs7Jlxbhv9WpVNYffXjZ3pqy1zxMQ",
+    authDomain: "polipoli-ada5c.firebaseapp.com",
+    projectId: "polipoli-ada5c",
+    storageBucket: "polipoli-ada5c.firebasestorage.app",
+    messagingSenderId: "72423424560",
+    appId: "1:72423424560:web:9d8679d32a61c631ec23f5"
+  };
+
+  const isConfigured = FIREBASE_CONFIG.apiKey && FIREBASE_CONFIG.apiKey.indexOf('COLE_AQUI') === -1;
+
+  window.FinancasCloud = {
+    configured: false,
+    clientId: Math.random().toString(36).slice(2) + Date.now().toString(36),
+    getUser: () => null,
+    signIn: () => { alert('Configure o FIREBASE_CONFIG no início do arquivo HTML para usar o login com Google.'); },
+    signOutUser: () => {},
+    loadDoc: async () => null,
+    saveDoc: async () => {},
+    subscribe: () => () => {},
+  };
+
+  if (isConfigured) {
+    try {
+      const { initializeApp } = await import("https://www.gstatic.com/firebasejs/10.13.0/firebase-app.js");
+      const {
+        getAuth, GoogleAuthProvider, signInWithRedirect, getRedirectResult,
+        onAuthStateChanged, signOut
+      } = await import("https://www.gstatic.com/firebasejs/10.13.0/firebase-auth.js");
+      const {
+        getFirestore, doc, getDoc, setDoc, onSnapshot, serverTimestamp
+      } = await import("https://www.gstatic.com/firebasejs/10.13.0/firebase-firestore.js");
+
+      const app = initializeApp(FIREBASE_CONFIG);
+      const auth = getAuth(app);
+      const db = getFirestore(app);
+      const CLIENT_ID = window.FinancasCloud.clientId;
+      let currentUser = null;
+
+      getRedirectResult(auth).catch((e) => console.warn('[Financas] redirect result:', e && e.message));
+
+      onAuthStateChanged(auth, (user) => {
+        currentUser = user;
+        window.dispatchEvent(new CustomEvent('financas-auth-changed', { detail: { user } }));
+      });
+
+      window.FinancasCloud = {
+        configured: true,
+        clientId: CLIENT_ID,
+        getUser: () => currentUser,
+        signIn: () => {
+          const provider = new GoogleAuthProvider();
+          signInWithRedirect(auth, provider);
+        },
+        signOutUser: () => signOut(auth),
+        loadDoc: async (uid) => {
+          const ref = doc(db, 'financas', uid);
+          const snap = await getDoc(ref);
+          return snap.exists() ? snap.data() : null;
+        },
+        saveDoc: async (uid, dataObj) => {
+          const ref = doc(db, 'financas', uid);
+          await setDoc(ref, {
+            data: JSON.stringify(dataObj),
+            updatedAt: serverTimestamp(),
+            updatedBy: CLIENT_ID,
+          });
+        },
+        subscribe: (uid, callback) => {
+          const ref = doc(db, 'financas', uid);
+          return onSnapshot(ref, (snap) => {
+            if (!snap.exists()) return;
+            const d = snap.data();
+            if (d.updatedBy === CLIENT_ID) return;
+            callback(d);
+          }, (err) => console.warn('[Financas] snapshot error:', err && err.message));
+        },
+      };
+    } catch (e) {
+      console.error('[Financas] Falha ao iniciar Firebase:', e);
+    }
+  }
+
+  // Avisa o app React (que carrega depois) que já sabemos o estado inicial (deslogado, se não configurado)
+  window.dispatchEvent(new CustomEvent('financas-auth-changed', { detail: { user: window.FinancasCloud.getUser() } }));
+</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.3.1/umd/react.production.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.3.1/umd/react-dom.production.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.24.7/babel.min.js"></script>
+<style>
+  html, body { margin: 0; padding: 0; }
+  #root { min-height: 100vh; }
+</style>
+</head>
+<body>
+<div id="root"></div>
+<script type="text/plain" id="app-source">
+const { useState, useEffect, useMemo, useCallback, useRef } = React;
+
+/* ============================================================
+   ÍCONES (SVG embutidos — sem dependência externa)
+   ============================================================ */
+function Icon({ children, size = 18, className = '', style }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" className={className} style={style}>
+      {children}
+    </svg>
+  );
+}
+const Plus = (p) => <Icon {...p}><line x1="12" y1="5" x2="12" y2="19" /><line x1="5" y1="12" x2="19" y2="12" /></Icon>;
+const X = (p) => <Icon {...p}><line x1="6" y1="6" x2="18" y2="18" /><line x1="18" y1="6" x2="6" y2="18" /></Icon>;
+const Pencil = (p) => <Icon {...p}><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25z" /><path d="M14.06 6.19l3.75 3.75 2.11-2.11a1 1 0 0 0 0-1.41l-2.34-2.34a1 1 0 0 0-1.41 0l-2.11 2.11z" /></Icon>;
+const Trash2 = (p) => <Icon {...p}><path d="M3 6h18" /><path d="M8 6V4h8v2" /><path d="M19 6l-1 14H6L5 6" /><line x1="10" y1="11" x2="10" y2="17" /><line x1="14" y1="11" x2="14" y2="17" /></Icon>;
+const ChevronLeft = (p) => <Icon {...p}><polyline points="15 18 9 12 15 6" /></Icon>;
+const ChevronRight = (p) => <Icon {...p}><polyline points="9 18 15 12 9 6" /></Icon>;
+const ChevronDown = (p) => <Icon {...p}><polyline points="6 9 12 15 18 9" /></Icon>;
+const Wallet = (p) => <Icon {...p}><rect x="3" y="6" width="18" height="13" rx="2" /><path d="M16 12h.01" /><path d="M3 10h18" /></Icon>;
+const Wallet2 = Wallet;
+const TrendingUp = (p) => <Icon {...p}><polyline points="4 15 10 9 14 13 20 6" /><polyline points="14 6 20 6 20 12" /></Icon>;
+const CreditCard = (p) => <Icon {...p}><rect x="2" y="5" width="20" height="14" rx="2" /><line x1="2" y1="10" x2="22" y2="10" /></Icon>;
+const PiggyBank = (p) => <Icon {...p}><circle cx="12" cy="12" r="9" /><path d="M12 7.2v9.6" /><path d="M15.2 9.6c0-1.35-1.43-2.4-3.2-2.4s-3.2.97-3.2 2.16c0 1.06.87 1.63 2.13 1.93l1.7.4c1.32.31 2.37.98 2.37 2.11 0 1.25-1.43 2.2-3.2 2.2s-3.2-.97-3.2-2.3" /></Icon>;
+const Tag = (p) => <Icon {...p}><path d="M2 12.5V4a1 1 0 0 1 1-1h8.5a1 1 0 0 1 .7.29l9 9a1 1 0 0 1 0 1.42l-8.5 8.5a1 1 0 0 1-1.42 0l-9-9A1 1 0 0 1 2 12.5Z" /><circle cx="7" cy="7" r="1.2" fill="currentColor" stroke="none" /></Icon>;
+const Settings2 = (p) => <Icon {...p}><line x1="4" y1="6" x2="20" y2="6" /><circle cx="9" cy="6" r="2" fill="var(--paper)" /><line x1="4" y1="12" x2="20" y2="12" /><circle cx="15" cy="12" r="2" fill="var(--paper)" /><line x1="4" y1="18" x2="20" y2="18" /><circle cx="8" cy="18" r="2" fill="var(--paper)" /></Icon>;
+const Repeat = (p) => <Icon {...p}><path d="M17 2l4 4-4 4" /><path d="M3 11V9a4 4 0 0 1 4-4h14" /><path d="M7 22l-4-4 4-4" /><path d="M21 13v2a4 4 0 0 1-4 4H3" /></Icon>;
+const Calendar = (p) => <Icon {...p}><rect x="3" y="4" width="18" height="18" rx="2" /><line x1="16" y1="2" x2="16" y2="6" /><line x1="8" y1="2" x2="8" y2="6" /><line x1="3" y1="10" x2="21" y2="10" /></Icon>;
+const Check = (p) => <Icon {...p}><polyline points="20 6 9 17 4 12" /></Icon>;
+const AlertCircle = (p) => <Icon {...p}><circle cx="12" cy="12" r="9" /><line x1="12" y1="8" x2="12" y2="13" /><circle cx="12" cy="16.3" r="0.9" fill="currentColor" stroke="none" /></Icon>;
+const LayoutDashboard = (p) => <Icon {...p}><rect x="3" y="3" width="7" height="9" rx="1" /><rect x="14" y="3" width="7" height="5" rx="1" /><rect x="14" y="12" width="7" height="9" rx="1" /><rect x="3" y="16" width="7" height="5" rx="1" /></Icon>;
+const Receipt = (p) => <Icon {...p}><path d="M6 3h12v18l-3-2-3 2-3-2-3 2V3z" /><line x1="9" y1="8" x2="15" y2="8" /><line x1="9" y1="12" x2="15" y2="12" /></Icon>;
+const Landmark = (p) => <Icon {...p}><polygon points="12 3 21 9 3 9" /><line x1="5" y1="21" x2="5" y2="10" /><line x1="9" y1="21" x2="9" y2="10" /><line x1="15" y1="21" x2="15" y2="10" /><line x1="19" y1="21" x2="19" y2="10" /><line x1="3" y1="21" x2="21" y2="21" /></Icon>;
+const ArrowUpRight = (p) => <Icon {...p}><line x1="7" y1="17" x2="17" y2="7" /><polyline points="8 7 17 7 17 16" /></Icon>;
+const ArrowDownRight = (p) => <Icon {...p}><line x1="7" y1="7" x2="17" y2="17" /><polyline points="17 8 17 17 8 17" /></Icon>;
+const Loader2 = (p) => <Icon {...p}><circle cx="12" cy="12" r="9" strokeDasharray="42 100" /></Icon>;
+const Download = (p) => <Icon {...p}><path d="M12 3v12" /><polyline points="7 11 12 16 17 11" /><line x1="4" y1="20" x2="20" y2="20" /></Icon>;
+const Upload = (p) => <Icon {...p}><path d="M12 21V9" /><polyline points="7 13 12 8 17 13" /><line x1="4" y1="20" x2="20" y2="20" /></Icon>;
+const ShieldAlert = (p) => <Icon {...p}><path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6l8-4z" /><line x1="12" y1="8" x2="12" y2="13" /><circle cx="12" cy="16.2" r="0.9" fill="currentColor" stroke="none" /></Icon>;
+const ListChecks = (p) => <Icon {...p}><line x1="9" y1="6" x2="20" y2="6" /><polyline points="4 6 5.5 7.5 8 5" /><line x1="9" y1="12" x2="20" y2="12" /><polyline points="4 12 5.5 13.5 8 11" /><line x1="9" y1="18" x2="20" y2="18" /><polyline points="4 18 5.5 19.5 8 17" /></Icon>;
+const UserCircle = (p) => <Icon {...p}><circle cx="12" cy="12" r="9" /><circle cx="12" cy="10" r="3" /><path d="M6.2 18.2a6 6 0 0 1 11.6 0" /></Icon>;
+const LogIn = (p) => <Icon {...p}><path d="M10 17l5-5-5-5" /><line x1="15" y1="12" x2="3" y2="12" /><path d="M3 5h4" /><path d="M3 19h4" /></Icon>;
+const LogOut = (p) => <Icon {...p}><path d="M14 17l-5-5 5-5" /><line x1="9" y1="12" x2="21" y2="12" /><path d="M21 5h-4" /><path d="M21 19h-4" /></Icon>;
+
+/* ============================================================
+   GRÁFICO SIMPLES (sem dependência externa)
+   ============================================================ */
+function MiniAreaChart({ data, xKey, yKey, color = '#1F6F54', height = 150 }) {
+  if (!data || data.length < 2) return <div className="chart-empty">Dados insuficientes para o gráfico ainda.</div>;
+  const w = 320;
+  const pad = { top: 10, right: 6, bottom: 20, left: 6 };
+  const values = data.map((d) => Number(d[yKey]) || 0);
+  const min = Math.min(...values, 0);
+  const max = Math.max(...values, 1);
+  const range = (max - min) || 1;
+  const stepX = (w - pad.left - pad.right) / (data.length - 1);
+  const pts = data.map((d, i) => ({
+    x: pad.left + i * stepX,
+    y: pad.top + (1 - (Number(d[yKey]) - min) / range) * (height - pad.top - pad.bottom),
+    label: d[xKey], value: Number(d[yKey]) || 0,
+  }));
+  const line = pts.map((p, i) => (i === 0 ? `M${p.x},${p.y}` : `L${p.x},${p.y}`)).join(' ');
+  const area = `${line} L${pts[pts.length - 1].x},${height - pad.bottom} L${pts[0].x},${height - pad.bottom} Z`;
+  const gid = 'g' + Math.random().toString(36).slice(2, 9);
+  return (
+    <div>
+      <svg viewBox={`0 0 ${w} ${height}`} width="100%" height={height} preserveAspectRatio="none">
+        <defs>
+          <linearGradient id={gid} x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stopColor={color} stopOpacity="0.35" />
+            <stop offset="100%" stopColor={color} stopOpacity="0" />
+          </linearGradient>
+        </defs>
+        <path d={area} fill={`url(#${gid})`} stroke="none" />
+        <path d={line} fill="none" stroke={color} strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" />
+        {pts.map((p, i) => <circle key={i} cx={p.x} cy={p.y} r="2.6" fill={color}><title>{`${p.label}: ${brl(p.value)}`}</title></circle>)}
+      </svg>
+      <div className="chart-labels">{data.map((d, i) => <span key={i}>{d[xKey]}</span>)}</div>
+    </div>
+  );
+}
+
+/* ============================================================
+   CONSTANTS & HELPERS
+   ============================================================ */
+const STORAGE_KEY = 'financas-app-data-v1';
+const MONTH_NAMES = ['Janeiro','Fevereiro','Março','Abril','Maio','Junho','Julho','Agosto','Setembro','Outubro','Novembro','Dezembro'];
+const MONTH_SHORT = ['Jan','Fev','Mar','Abr','Mai','Jun','Jul','Ago','Set','Out','Nov','Dez'];
+const FORMAS_PAGAMENTO = ['Cartão de crédito','PIX','Dinheiro','Boleto','Débito','Outros'];
+const FORMAS_RECEBIMENTO = ['PIX','Transferência','Dinheiro','Boleto','Outros'];
+const DEFAULT_CATEGORIAS = ['Alimentação','Transporte','Casa','Saúde','Lazer','Educação','Assinaturas','Dívidas','Compras','Viagens','Salário','Investimentos','Outros'];
+const PALETTE = ['#1F6F54','#B08D2B','#2E5C8A','#A13D2E','#7A5C9E','#C97B4A','#4A7C7C','#8A6D3B','#5B6472','#3A6B8A','#6B8E4E','#9C5B6B'];
+
+const uid = () => Date.now().toString(36) + Math.random().toString(36).slice(2, 9);
+const todayISO = () => new Date().toISOString().slice(0, 10);
+const todayYM = () => new Date().toISOString().slice(0, 7);
+
+const brl = (v) => (Number(v) || 0).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+
+const ymLabel = (ym) => {
+  if (!ym) return '—';
+  const [y, m] = ym.split('-').map(Number);
+  return `${MONTH_NAMES[m - 1]} de ${y}`;
+};
+const ymShort = (ym) => {
+  if (!ym) return '—';
+  const [y, m] = ym.split('-').map(Number);
+  return `${MONTH_SHORT[m - 1]}/${String(y).slice(2)}`;
+};
+const addMonthsYM = (ym, n) => {
+  const [y, m] = ym.split('-').map(Number);
+  const idx = (m - 1) + n;
+  const yy = y + Math.floor(idx / 12);
+  const mm = ((idx % 12) + 12) % 12 + 1;
+  return `${yy}-${String(mm).padStart(2, '0')}`;
+};
+const cmpYM = (a, b) => (a === b ? 0 : (a < b ? -1 : 1));
+const dateYM = (d) => (d ? d.slice(0, 7) : '');
+const fmtDateBR = (d) => {
+  if (!d) return '—';
+  const [y, m, day] = d.split('-');
+  return `${day}/${m}/${y}`;
+};
+
+function isActiveInMonth(inicioYM, fimYM, ym) {
+  if (!inicioYM) return false;
+  if (cmpYM(ym, inicioYM) < 0) return false;
+  if (fimYM && cmpYM(ym, fimYM) > 0) return false;
+  return true;
+}
+
+function gerarParcelas(inicioYM, qtd, valorParcela, valorTotal) {
+  const parcelas = [];
+  const [y, m] = inicioYM.split('-').map(Number);
+  for (let i = 1; i <= qtd; i++) {
+    const idx = (m - 1) + (i - 1);
+    const yy = y + Math.floor(idx / 12);
+    const mm = (idx % 12) + 1;
+    const competencia = `${yy}-${String(mm).padStart(2, '0')}`;
+    let valor = valorParcela;
+    if (i === qtd && valorTotal) {
+      valor = +(valorTotal - valorParcela * (qtd - 1)).toFixed(2);
+    }
+    parcelas.push({ id: uid(), numero: i, competencia, valor, paga: false });
+  }
+  return parcelas;
+}
+
+function defaultData() {
+  return {
+    categorias: DEFAULT_CATEGORIAS.map((nome) => ({ id: uid(), nome })),
+    cartoes: [],
+    receitas: [],
+    gastosFixos: [],
+    gastosVariaveis: [],
+    assinaturas: [],
+    dividas: [],
+    investimentos: [],
+  };
+}
+
+/* ============================================================
+   STORAGE HOOK
+   - Sempre grava em localStorage (cache instantâneo + modo offline).
+   - Se a pessoa estiver logada com Google (window.FinancasCloud),
+     também sincroniza com o Firestore, e escuta atualizações vindas
+     de outros aparelhos em tempo real.
+   ============================================================ */
+function loadLocalData() {
+  try {
+    const raw = window.localStorage.getItem(STORAGE_KEY);
+    if (!raw) return null;
+    const parsed = JSON.parse(raw);
+    return { ...defaultData(), ...parsed, categorias: (parsed.categorias && parsed.categorias.length) ? parsed.categorias : defaultData().categorias };
+  } catch (e) {
+    return null;
+  }
+}
+
+function useFinanceData() {
+  const [data, setData] = useState(() => loadLocalData() || defaultData());
+  const [status, setStatus] = useState('ready'); // ready | saving | saved | error
+  const [user, setUser] = useState(() => (window.FinancasCloud ? window.FinancasCloud.getUser() : null));
+  const cloudConfigured = !!(window.FinancasCloud && window.FinancasCloud.configured);
+  const saveTimer = useRef(null);
+  const flashTimer = useRef(null);
+  const unsubRef = useRef(null);
+  const userRef = useRef(user);
+  userRef.current = user;
+
+  // Escuta mudanças de login (evento disparado pelo bloco Firebase no <head>)
+  useEffect(() => {
+    const handler = (e) => setUser(e.detail.user);
+    window.addEventListener('financas-auth-changed', handler);
+    return () => window.removeEventListener('financas-auth-changed', handler);
+  }, []);
+
+  // Quando loga: busca o que já existe na nuvem (ou envia o local pela primeira vez)
+  // e passa a escutar atualizações em tempo real vindas de outros aparelhos.
+  useEffect(() => {
+    if (unsubRef.current) { unsubRef.current(); unsubRef.current = null; }
+    if (!user || !window.FinancasCloud) return;
+    let cancelled = false;
+
+    (async () => {
+      setStatus('saving');
+      try {
+        const cloudDoc = await window.FinancasCloud.loadDoc(user.uid);
+        if (cancelled) return;
+        if (cloudDoc && cloudDoc.data) {
+          const parsed = JSON.parse(cloudDoc.data);
+          const merged = { ...defaultData(), ...parsed, categorias: (parsed.categorias && parsed.categorias.length) ? parsed.categorias : defaultData().categorias };
+          setData(merged);
+          window.localStorage.setItem(STORAGE_KEY, JSON.stringify(merged));
+        } else {
+          await window.FinancasCloud.saveDoc(user.uid, loadLocalData() || defaultData());
+        }
+        setStatus('saved');
+        flashTimer.current = setTimeout(() => setStatus('ready'), 1200);
+      } catch (e) {
+        setStatus('error');
+      }
+    })();
+
+    unsubRef.current = window.FinancasCloud.subscribe(user.uid, (cloudDoc) => {
+      try {
+        const parsed = JSON.parse(cloudDoc.data);
+        const merged = { ...defaultData(), ...parsed, categorias: (parsed.categorias && parsed.categorias.length) ? parsed.categorias : defaultData().categorias };
+        setData(merged);
+        window.localStorage.setItem(STORAGE_KEY, JSON.stringify(merged));
+      } catch (e) { /* ignore malformed snapshot */ }
+    });
+
+    return () => { cancelled = true; };
+  }, [user]);
+
+  const writeNow = (next) => {
+    try { window.localStorage.setItem(STORAGE_KEY, JSON.stringify(next)); } catch (e) { /* ignore */ }
+    if (userRef.current && window.FinancasCloud) {
+      window.FinancasCloud.saveDoc(userRef.current.uid, next)
+        .then(() => { setStatus('saved'); flashTimer.current = setTimeout(() => setStatus('ready'), 1200); })
+        .catch(() => setStatus('error'));
+    } else {
+      setStatus('saved');
+      flashTimer.current = setTimeout(() => setStatus('ready'), 1200);
+    }
+  };
+
+  const persist = useCallback((next) => {
+    setData(next);
+    if (saveTimer.current) clearTimeout(saveTimer.current);
+    if (flashTimer.current) clearTimeout(flashTimer.current);
+    setStatus('saving');
+    saveTimer.current = setTimeout(() => writeNow(next), 300);
+  }, []);
+
+  const replaceAll = useCallback((next) => {
+    setData(next);
+    setStatus('saving');
+    setTimeout(() => writeNow(next), 100);
+  }, []);
+
+  const signIn = useCallback(() => { if (window.FinancasCloud) window.FinancasCloud.signIn(); }, []);
+  const signOutUser = useCallback(() => { if (window.FinancasCloud) window.FinancasCloud.signOutUser(); }, []);
+
+  return { data, status, persist, replaceAll, user, cloudConfigured, signIn, signOutUser };
+}
+
+/* ============================================================
+   ÁTOMOS DE UI
+   ============================================================ */
+function Field({ label, error, hint, children }) {
+  return (
+    <label className="field">
+      <span className="field-label">{label}</span>
+      {children}
+      {hint && !error && <span className="field-hint">{hint}</span>}
+      {error && <span className="field-error"><AlertCircle size={12} /> {error}</span>}
+    </label>
+  );
+}
+
+function ModalFooter({ onCancel, onSave, saveLabel = 'Salvar' }) {
+  return (
+    <div className="modal-footer">
+      <button type="button" className="btn btn-ghost" onClick={onCancel}>Cancelar</button>
+      <button type="button" className="btn btn-primary" onClick={onSave}>{saveLabel}</button>
+    </div>
+  );
+}
+
+function Modal({ title, subtitle, onClose, children, wide }) {
+  useEffect(() => {
+    const onKey = (e) => { if (e.key === 'Escape') onClose(); };
+    document.addEventListener('keydown', onKey);
+    return () => document.removeEventListener('keydown', onKey);
+  }, [onClose]);
+  return (
+    <div className="modal-overlay" onClick={onClose}>
+      <div className={'modal-sheet' + (wide ? ' modal-wide' : '')} onClick={(e) => e.stopPropagation()}>
+        <div className="modal-head">
+          <div>
+            <h3>{title}</h3>
+            {subtitle && <p className="modal-subtitle">{subtitle}</p>}
+          </div>
+          <button type="button" className="icon-btn" onClick={onClose} aria-label="Fechar"><X size={18} /></button>
+        </div>
+        <div className="modal-body">{children}</div>
+      </div>
+    </div>
+  );
+}
+
+function EmptyState({ icon: Icon, title, text }) {
+  return (
+    <div className="empty-state">
+      <Icon size={28} strokeWidth={1.4} />
+      <strong>{title}</strong>
+      <span>{text}</span>
+    </div>
+  );
+}
+
+function StatCard({ label, value, tone, sub }) {
+  return (
+    <div className={'stat-card' + (tone ? ' tone-' + tone : '')}>
+      <span className="stat-label">{label}</span>
+      <span className="stat-value">{value}</span>
+      {sub && <span className="stat-sub">{sub}</span>}
+    </div>
+  );
+}
+
+function StatusBadge({ children, tone = 'default' }) {
+  return <span className={'badge badge-' + tone}>{children}</span>;
+}
+
+function IconCircle({ children, tone = 'default' }) {
+  return <div className={'icon-circle tone-' + tone}>{children}</div>;
+}
+
+function ConfirmInline({ text, onConfirm, onCancel }) {
+  return (
+    <div className="confirm-inline">
+      <span>{text}</span>
+      <div className="confirm-actions">
+        <button type="button" className="btn btn-ghost btn-sm" onClick={onCancel}>Cancelar</button>
+        <button type="button" className="btn btn-danger btn-sm" onClick={onConfirm}>Excluir</button>
+      </div>
+    </div>
+  );
+}
+
+function ItemActions({ onEdit, onDelete }) {
+  const [confirming, setConfirming] = useState(false);
+  if (confirming) {
+    return <ConfirmInline text="Excluir este lançamento?" onConfirm={onDelete} onCancel={() => setConfirming(false)} />;
+  }
+  return (
+    <div className="item-actions">
+      <button type="button" className="icon-btn" onClick={onEdit} aria-label="Editar"><Pencil size={15} /></button>
+      <button type="button" className="icon-btn icon-btn-danger" onClick={() => setConfirming(true)} aria-label="Excluir"><Trash2 size={15} /></button>
+    </div>
+  );
+}
+
+function MonthNav({ ym, setYm }) {
+  return (
+    <div className="month-nav">
+      <button type="button" className="icon-btn" onClick={() => setYm(addMonthsYM(ym, -1))} aria-label="Mês anterior"><ChevronLeft size={18} /></button>
+      <div className="month-nav-label">
+        <Calendar size={15} />
+        <span>{ymLabel(ym)}</span>
+      </div>
+      <button type="button" className="icon-btn" onClick={() => setYm(addMonthsYM(ym, 1))} aria-label="Próximo mês"><ChevronRight size={18} /></button>
+      {ym !== todayYM() && (
+        <button type="button" className="btn-link" onClick={() => setYm(todayYM())}>hoje</button>
+      )}
+    </div>
+  );
+}
+
+function SectionHeader({ title, subtitle, action }) {
+  return (
+    <div className="section-header">
+      <div>
+        <h2>{title}</h2>
+        {subtitle && <p>{subtitle}</p>}
+      </div>
+      {action}
+    </div>
+  );
+}
+
+function BarRow({ label, value, total, color }) {
+  const pct = total > 0 ? Math.max(2, Math.round((value / total) * 100)) : 0;
+  return (
+    <div className="bar-row">
+      <div className="bar-row-top">
+        <span>{label}</span>
+        <span className="mono">{brl(value)}</span>
+      </div>
+      <div className="bar-track">
+        <div className="bar-fill" style={{ width: pct + '%', background: color }} />
+      </div>
+    </div>
+  );
+}
+
+function LoadingScreen() {
+  return (
+    <div className="loading-screen">
+      <Loader2 className="spin" size={26} />
+      <span>Carregando suas finanças…</span>
+    </div>
+  );
+}
+
+function SelectField({ value, onChange, options, placeholder }) {
+  return (
+    <select className="select" value={value} onChange={(e) => onChange(e.target.value)}>
+      {placeholder && <option value="">{placeholder}</option>}
+      {options.map((o) => (typeof o === 'string'
+        ? <option key={o} value={o}>{o}</option>
+        : <option key={o.value} value={o.value}>{o.label}</option>))}
+    </select>
+  );
+}
+
+/* ============================================================
+   FORMULÁRIOS
+   ============================================================ */
+function CartaoSelectBlock({ formaPagamento, cartaoId, setCartaoId, cartoes, error }) {
+  if (formaPagamento !== 'Cartão de crédito') return null;
+  return (
+    <Field label="Cartão utilizado" error={error}>
+      {cartoes.length === 0 ? (
+        <span className="field-hint">Cadastre um cartão na aba Cartões primeiro.</span>
+      ) : (
+        <SelectField value={cartaoId} onChange={setCartaoId} placeholder="Selecione o cartão"
+          options={cartoes.map((c) => ({ value: c.id, label: c.nome }))} />
+      )}
+    </Field>
+  );
+}
+
+function ReceitaForm({ initial, categorias, onSave, onCancel }) {
+  const [v, setV] = useState(() => initial || {
+    descricao: '', valor: '', data: todayISO(), competencia: todayYM(),
+    categoria: categorias[0]?.nome || '', formaRecebimento: FORMAS_RECEBIMENTO[0], observacao: '',
+  });
+  const [err, setErr] = useState({});
+  const set = (k, val) => setV((s) => ({ ...s, [k]: val }));
+
+  const submit = () => {
+    const e = {};
+    if (!v.descricao.trim()) e.descricao = 'Informe a descrição';
+    if (!v.valor || Number(v.valor) <= 0) e.valor = 'Informe um valor válido';
+    if (!v.data) e.data = 'Informe a data';
+    if (!v.competencia) e.competencia = 'Informe a competência';
+    if (!v.categoria) e.categoria = 'Selecione uma categoria';
+    if (Object.keys(e).length) { setErr(e); return; }
+    onSave({ ...v, valor: Number(v.valor), id: v.id || uid() });
+  };
+
+  return (
+    <>
+      <Field label="Descrição" error={err.descricao}>
+        <input className="input" value={v.descricao} onChange={(e) => set('descricao', e.target.value)} placeholder="Ex.: Salário, Freelance…" />
+      </Field>
+      <div className="row2">
+        <Field label="Valor (R$)" error={err.valor}>
+          <input className="input mono" type="number" min="0" step="0.01" value={v.valor} onChange={(e) => set('valor', e.target.value)} placeholder="0,00" />
+        </Field>
+        <Field label="Data" error={err.data}>
+          <input className="input" type="date" value={v.data} onChange={(e) => set('data', e.target.value)} />
+        </Field>
+      </div>
+      <div className="row2">
+        <Field label="Competência" error={err.competencia} hint="Mês em que a receita entra nos totais">
+          <input className="input" type="month" value={v.competencia} onChange={(e) => set('competencia', e.target.value)} />
+        </Field>
+        <Field label="Forma de recebimento">
+          <SelectField value={v.formaRecebimento} onChange={(val) => set('formaRecebimento', val)} options={FORMAS_RECEBIMENTO} />
+        </Field>
+      </div>
+      <Field label="Categoria" error={err.categoria}>
+        <SelectField value={v.categoria} onChange={(val) => set('categoria', val)} options={categorias.map((c) => c.nome)} placeholder="Selecione" />
+      </Field>
+      <Field label="Observação">
+        <textarea className="textarea" rows={2} value={v.observacao} onChange={(e) => set('observacao', e.target.value)} />
+      </Field>
+      <ModalFooter onCancel={onCancel} onSave={submit} />
+    </>
+  );
+}
+
+function GastoFixoForm({ initial, categorias, cartoes, onSave, onCancel }) {
+  const [v, setV] = useState(() => initial || {
+    descricao: '', valor: '', categoria: categorias[0]?.nome || '', dataInicio: todayYM(), dataFim: '',
+    formaPagamento: FORMAS_PAGAMENTO[1], cartaoId: '', observacao: '',
+  });
+  const [err, setErr] = useState({});
+  const set = (k, val) => setV((s) => ({ ...s, [k]: val }));
+
+  const submit = () => {
+    const e = {};
+    if (!v.descricao.trim()) e.descricao = 'Informe a descrição';
+    if (!v.valor || Number(v.valor) <= 0) e.valor = 'Informe um valor válido';
+    if (!v.categoria) e.categoria = 'Selecione uma categoria';
+    if (!v.dataInicio) e.dataInicio = 'Informe o mês de início';
+    if (v.dataFim && cmpYM(v.dataInicio, v.dataFim) > 0) e.dataFim = 'O término não pode ser antes do início';
+    if (!v.formaPagamento) e.formaPagamento = 'Selecione a forma de pagamento';
+    if (v.formaPagamento === 'Cartão de crédito' && !v.cartaoId) e.cartaoId = 'Selecione o cartão';
+    if (Object.keys(e).length) { setErr(e); return; }
+    onSave({ ...v, valor: Number(v.valor), id: v.id || uid() });
+  };
+
+  return (
+    <>
+      <Field label="Descrição" error={err.descricao}>
+        <input className="input" value={v.descricao} onChange={(e) => set('descricao', e.target.value)} placeholder="Ex.: Aluguel, Internet, Academia…" />
+      </Field>
+      <div className="row2">
+        <Field label="Valor (R$)" error={err.valor}>
+          <input className="input mono" type="number" min="0" step="0.01" value={v.valor} onChange={(e) => set('valor', e.target.value)} />
+        </Field>
+        <Field label="Categoria" error={err.categoria}>
+          <SelectField value={v.categoria} onChange={(val) => set('categoria', val)} options={categorias.map((c) => c.nome)} placeholder="Selecione" />
+        </Field>
+      </div>
+      <div className="row2">
+        <Field label="Início" error={err.dataInicio} hint="Mês em que passa a valer">
+          <input className="input" type="month" value={v.dataInicio} onChange={(e) => set('dataInicio', e.target.value)} />
+        </Field>
+        <Field label="Término (opcional)" error={err.dataFim} hint="Vazio = recorrente sem fim">
+          <input className="input" type="month" value={v.dataFim} onChange={(e) => set('dataFim', e.target.value)} />
+        </Field>
+      </div>
+      <div className="row2">
+        <Field label="Forma de pagamento" error={err.formaPagamento}>
+          <SelectField value={v.formaPagamento} onChange={(val) => set('formaPagamento', val)} options={FORMAS_PAGAMENTO} />
+        </Field>
+        <CartaoSelectBlock formaPagamento={v.formaPagamento} cartaoId={v.cartaoId} setCartaoId={(val) => set('cartaoId', val)} cartoes={cartoes} error={err.cartaoId} />
+      </div>
+      <Field label="Observação">
+        <textarea className="textarea" rows={2} value={v.observacao} onChange={(e) => set('observacao', e.target.value)} />
+      </Field>
+      <ModalFooter onCancel={onCancel} onSave={submit} />
+    </>
+  );
+}
+
+function GastoVariavelForm({ initial, categorias, cartoes, onSave, onCancel }) {
+  const [v, setV] = useState(() => initial || {
+    descricao: '', valor: '', dataCompra: todayISO(), competencia: todayYM(),
+    categoria: categorias[0]?.nome || '', formaPagamento: FORMAS_PAGAMENTO[1], cartaoId: '', observacao: '',
+  });
+  const [err, setErr] = useState({});
+  const set = (k, val) => setV((s) => {
+    const next = { ...s, [k]: val };
+    if (k === 'dataCompra' && !s._touchedComp) next.competencia = dateYM(val);
+    return next;
+  });
+  const setCompetencia = (val) => setV((s) => ({ ...s, competencia: val, _touchedComp: true }));
+
+  const submit = () => {
+    const e = {};
+    if (!v.descricao.trim()) e.descricao = 'Informe a descrição';
+    if (!v.valor || Number(v.valor) <= 0) e.valor = 'Informe um valor válido';
+    if (!v.dataCompra) e.dataCompra = 'Informe a data da compra';
+    if (!v.competencia) e.competencia = 'Informe a competência';
+    if (!v.categoria) e.categoria = 'Selecione uma categoria';
+    if (!v.formaPagamento) e.formaPagamento = 'Selecione a forma de pagamento';
+    if (v.formaPagamento === 'Cartão de crédito' && !v.cartaoId) e.cartaoId = 'Selecione o cartão';
+    if (Object.keys(e).length) { setErr(e); return; }
+    onSave({ ...v, valor: Number(v.valor), id: v.id || uid() });
+  };
+
+  return (
+    <>
+      <Field label="Descrição" error={err.descricao}>
+        <input className="input" value={v.descricao} onChange={(e) => set('descricao', e.target.value)} placeholder="Ex.: Supermercado, Roupas…" />
+      </Field>
+      <div className="row2">
+        <Field label="Valor (R$)" error={err.valor}>
+          <input className="input mono" type="number" min="0" step="0.01" value={v.valor} onChange={(e) => set('valor', e.target.value)} />
+        </Field>
+        <Field label="Data da compra" error={err.dataCompra}>
+          <input className="input" type="date" value={v.dataCompra} onChange={(e) => set('dataCompra', e.target.value)} />
+        </Field>
+      </div>
+      <div className="row2">
+        <Field label="Competência" error={err.competencia} hint="Mês da fatura/total — pode ser diferente da compra">
+          <input className="input" type="month" value={v.competencia} onChange={(e) => setCompetencia(e.target.value)} />
+        </Field>
+        <Field label="Categoria" error={err.categoria}>
+          <SelectField value={v.categoria} onChange={(val) => set('categoria', val)} options={categorias.map((c) => c.nome)} placeholder="Selecione" />
+        </Field>
+      </div>
+      <div className="row2">
+        <Field label="Forma de pagamento" error={err.formaPagamento}>
+          <SelectField value={v.formaPagamento} onChange={(val) => set('formaPagamento', val)} options={FORMAS_PAGAMENTO} />
+        </Field>
+        <CartaoSelectBlock formaPagamento={v.formaPagamento} cartaoId={v.cartaoId} setCartaoId={(val) => set('cartaoId', val)} cartoes={cartoes} error={err.cartaoId} />
+      </div>
+      <Field label="Observação">
+        <textarea className="textarea" rows={2} value={v.observacao} onChange={(e) => set('observacao', e.target.value)} />
+      </Field>
+      <ModalFooter onCancel={onCancel} onSave={submit} />
+    </>
+  );
+}
+
+function AssinaturaForm({ initial, categorias, cartoes, onSave, onCancel }) {
+  const [v, setV] = useState(() => initial || {
+    nome: '', valor: '', diaCobranca: '10', formaPagamento: FORMAS_PAGAMENTO[0], cartaoId: '',
+    categoria: categorias.find((c) => c.nome === 'Assinaturas')?.nome || categorias[0]?.nome || '',
+    dataInicio: todayYM(), dataFim: '', observacao: '',
+  });
+  const [err, setErr] = useState({});
+  const set = (k, val) => setV((s) => ({ ...s, [k]: val }));
+
+  const submit = () => {
+    const e = {};
+    if (!v.nome.trim()) e.nome = 'Informe o nome da assinatura';
+    if (!v.valor || Number(v.valor) <= 0) e.valor = 'Informe um valor válido';
+    if (!v.diaCobranca || Number(v.diaCobranca) < 1 || Number(v.diaCobranca) > 31) e.diaCobranca = 'Informe um dia entre 1 e 31';
+    if (!v.dataInicio) e.dataInicio = 'Informe o mês de início';
+    if (v.dataFim && cmpYM(v.dataInicio, v.dataFim) > 0) e.dataFim = 'O término não pode ser antes do início';
+    if (!v.categoria) e.categoria = 'Selecione uma categoria';
+    if (!v.formaPagamento) e.formaPagamento = 'Selecione a forma de pagamento';
+    if (v.formaPagamento === 'Cartão de crédito' && !v.cartaoId) e.cartaoId = 'Selecione o cartão';
+    if (Object.keys(e).length) { setErr(e); return; }
+    onSave({ ...v, valor: Number(v.valor), diaCobranca: Number(v.diaCobranca), id: v.id || uid() });
+  };
+
+  return (
+    <>
+      <Field label="Nome da assinatura" error={err.nome}>
+        <input className="input" value={v.nome} onChange={(e) => set('nome', e.target.value)} placeholder="Ex.: Spotify, Netflix…" />
+      </Field>
+      <div className="row2">
+        <Field label="Valor (R$)" error={err.valor}>
+          <input className="input mono" type="number" min="0" step="0.01" value={v.valor} onChange={(e) => set('valor', e.target.value)} />
+        </Field>
+        <Field label="Dia da cobrança" error={err.diaCobranca}>
+          <input className="input mono" type="number" min="1" max="31" value={v.diaCobranca} onChange={(e) => set('diaCobranca', e.target.value)} />
+        </Field>
+      </div>
+      <div className="row2">
+        <Field label="Início" error={err.dataInicio}>
+          <input className="input" type="month" value={v.dataInicio} onChange={(e) => set('dataInicio', e.target.value)} />
+        </Field>
+        <Field label="Término (opcional)" error={err.dataFim}>
+          <input className="input" type="month" value={v.dataFim} onChange={(e) => set('dataFim', e.target.value)} />
+        </Field>
+      </div>
+      <Field label="Categoria" error={err.categoria}>
+        <SelectField value={v.categoria} onChange={(val) => set('categoria', val)} options={categorias.map((c) => c.nome)} placeholder="Selecione" />
+      </Field>
+      <div className="row2">
+        <Field label="Forma de pagamento" error={err.formaPagamento}>
+          <SelectField value={v.formaPagamento} onChange={(val) => set('formaPagamento', val)} options={FORMAS_PAGAMENTO} />
+        </Field>
+        <CartaoSelectBlock formaPagamento={v.formaPagamento} cartaoId={v.cartaoId} setCartaoId={(val) => set('cartaoId', val)} cartoes={cartoes} error={err.cartaoId} />
+      </div>
+      <Field label="Observação">
+        <textarea className="textarea" rows={2} value={v.observacao} onChange={(e) => set('observacao', e.target.value)} />
+      </Field>
+      <ModalFooter onCancel={onCancel} onSave={submit} />
+    </>
+  );
+}
+
+function DividaForm({ initial, categorias, cartoes, onSave, onCancel }) {
+  const [v, setV] = useState(() => initial || {
+    nome: '', valorTotal: '', valorParcela: '', qtdParcelas: '', dataInicio: todayYM(),
+    categoria: categorias.find((c) => c.nome === 'Dívidas')?.nome || categorias[0]?.nome || '',
+    formaPagamento: FORMAS_PAGAMENTO[1], cartaoId: '', observacao: '',
+  });
+  const [manualParcela, setManualParcela] = useState(!!initial);
+  const [err, setErr] = useState({});
+
+  const recompute = (next) => {
+    if (!manualParcela && next.valorTotal && next.qtdParcelas) {
+      const auto = Number(next.valorTotal) / Number(next.qtdParcelas);
+      if (!isNaN(auto)) next.valorParcela = +auto.toFixed(2);
+    }
+    return next;
+  };
+  const set = (k, val) => setV((s) => recompute({ ...s, [k]: val }));
+  const setParcela = (val) => { setManualParcela(true); setV((s) => ({ ...s, valorParcela: val })); };
+
+  const fimPrevisto = useMemo(() => {
+    if (!v.dataInicio || !v.qtdParcelas) return '';
+    return addMonthsYM(v.dataInicio, Number(v.qtdParcelas) - 1);
+  }, [v.dataInicio, v.qtdParcelas]);
+
+  const submit = () => {
+    const e = {};
+    if (!v.nome.trim()) e.nome = 'Informe o nome da dívida';
+    if (!v.valorTotal || Number(v.valorTotal) <= 0) e.valorTotal = 'Informe o valor total';
+    const qtdN = Number(v.qtdParcelas);
+    if (!v.qtdParcelas || qtdN < 1 || !Number.isInteger(qtdN)) e.qtdParcelas = 'Informe um número de parcelas válido';
+    if (!v.valorParcela || Number(v.valorParcela) <= 0) e.valorParcela = 'Informe o valor da parcela';
+    if (!v.dataInicio) e.dataInicio = 'Informe a data de início';
+    if (!v.categoria) e.categoria = 'Selecione uma categoria';
+    if (!v.formaPagamento) e.formaPagamento = 'Selecione a forma de pagamento';
+    if (v.formaPagamento === 'Cartão de crédito' && !v.cartaoId) e.cartaoId = 'Selecione o cartão';
+    if (Object.keys(e).length) { setErr(e); return; }
+
+    const qtd = qtdN;
+    const valorParcela = Number(v.valorParcela);
+    const valorTotal = Number(v.valorTotal);
+    const precisaRegerar = !initial || initial.qtdParcelas !== qtd || initial.dataInicio !== v.dataInicio
+      || Number(initial.valorParcela) !== valorParcela || Number(initial.valorTotal) !== valorTotal;
+    const parcelas = precisaRegerar ? gerarParcelas(v.dataInicio, qtd, valorParcela, valorTotal) : initial.parcelas;
+    onSave({ ...v, valorTotal, valorParcela, qtdParcelas: qtd, parcelas, id: v.id || uid() });
+  };
+
+  return (
+    <>
+      <Field label="Nome / descrição da dívida" error={err.nome}>
+        <input className="input" value={v.nome} onChange={(e) => set('nome', e.target.value)} placeholder="Ex.: Financiamento notebook" />
+      </Field>
+      <div className="row2">
+        <Field label="Valor total (R$)" error={err.valorTotal}>
+          <input className="input mono" type="number" min="0" step="0.01" value={v.valorTotal} onChange={(e) => set('valorTotal', e.target.value)} />
+        </Field>
+        <Field label="Qtd. de parcelas" error={err.qtdParcelas}>
+          <input className="input mono" type="number" min="1" step="1" value={v.qtdParcelas} onChange={(e) => set('qtdParcelas', e.target.value)} />
+        </Field>
+      </div>
+      <div className="row2">
+        <Field label="Valor da parcela (R$)" error={err.valorParcela} hint="Calculado automaticamente; você pode ajustar">
+          <input className="input mono" type="number" min="0" step="0.01" value={v.valorParcela} onChange={(e) => setParcela(e.target.value)} />
+        </Field>
+        <Field label="Início (1ª parcela)" error={err.dataInicio}>
+          <input className="input" type="month" value={v.dataInicio} onChange={(e) => set('dataInicio', e.target.value)} />
+        </Field>
+      </div>
+      {fimPrevisto && <p className="field-hint" style={{ marginTop: -8, marginBottom: 12 }}>Término previsto: <strong>{ymLabel(fimPrevisto)}</strong></p>}
+      <Field label="Categoria" error={err.categoria}>
+        <SelectField value={v.categoria} onChange={(val) => set('categoria', val)} options={categorias.map((c) => c.nome)} placeholder="Selecione" />
+      </Field>
+      <div className="row2">
+        <Field label="Forma de pagamento" error={err.formaPagamento}>
+          <SelectField value={v.formaPagamento} onChange={(val) => set('formaPagamento', val)} options={FORMAS_PAGAMENTO} />
+        </Field>
+        <CartaoSelectBlock formaPagamento={v.formaPagamento} cartaoId={v.cartaoId} setCartaoId={(val) => set('cartaoId', val)} cartoes={cartoes} error={err.cartaoId} />
+      </div>
+      <Field label="Observação">
+        <textarea className="textarea" rows={2} value={v.observacao} onChange={(e) => set('observacao', e.target.value)} />
+      </Field>
+      <ModalFooter onCancel={onCancel} onSave={submit} />
+    </>
+  );
+}
+
+function CartaoForm({ initial, onSave, onCancel }) {
+  const [v, setV] = useState(() => initial || { nome: '', limite: '', diaFechamento: '', diaVencimento: '' });
+  const [err, setErr] = useState({});
+  const set = (k, val) => setV((s) => ({ ...s, [k]: val }));
+
+  const submit = () => {
+    const e = {};
+    if (!v.nome.trim()) e.nome = 'Informe o nome do cartão';
+    if (v.limite !== '' && Number(v.limite) < 0) e.limite = 'Limite inválido';
+    if (!v.diaFechamento || Number(v.diaFechamento) < 1 || Number(v.diaFechamento) > 31) e.diaFechamento = 'Informe um dia entre 1 e 31';
+    if (!v.diaVencimento || Number(v.diaVencimento) < 1 || Number(v.diaVencimento) > 31) e.diaVencimento = 'Informe um dia entre 1 e 31';
+    if (Object.keys(e).length) { setErr(e); return; }
+    onSave({ ...v, limite: v.limite === '' ? 0 : Number(v.limite), diaFechamento: Number(v.diaFechamento), diaVencimento: Number(v.diaVencimento), id: v.id || uid() });
+  };
+
+  return (
+    <>
+      <Field label="Nome do cartão" error={err.nome}>
+        <input className="input" value={v.nome} onChange={(e) => set('nome', e.target.value)} placeholder="Ex.: Nubank, Itaú…" />
+      </Field>
+      <Field label="Limite (R$) — opcional" error={err.limite}>
+        <input className="input mono" type="number" min="0" step="0.01" value={v.limite} onChange={(e) => set('limite', e.target.value)} />
+      </Field>
+      <div className="row2">
+        <Field label="Dia de fechamento" error={err.diaFechamento}>
+          <input className="input mono" type="number" min="1" max="31" value={v.diaFechamento} onChange={(e) => set('diaFechamento', e.target.value)} />
+        </Field>
+        <Field label="Dia de vencimento" error={err.diaVencimento}>
+          <input className="input mono" type="number" min="1" max="31" value={v.diaVencimento} onChange={(e) => set('diaVencimento', e.target.value)} />
+        </Field>
+      </div>
+      <ModalFooter onCancel={onCancel} onSave={submit} />
+    </>
+  );
+}
+
+function InvestimentoForm({ initial, categorias, onSave, onCancel }) {
+  const [v, setV] = useState(() => initial || {
+    nome: '', instituicao: '', tipo: '', valorInicial: '', dataInvestimento: todayISO(), observacao: '',
+  });
+  const [err, setErr] = useState({});
+  const set = (k, val) => setV((s) => ({ ...s, [k]: val }));
+
+  const submit = () => {
+    const e = {};
+    if (!v.nome.trim()) e.nome = 'Informe o nome do investimento';
+    if (!v.valorInicial || Number(v.valorInicial) <= 0) e.valorInicial = 'Informe o valor investido';
+    if (!v.dataInvestimento) e.dataInvestimento = 'Informe a data';
+    if (Object.keys(e).length) { setErr(e); return; }
+    const valorInicial = Number(v.valorInicial);
+    const historico = initial ? initial.historico : [{ id: uid(), data: v.dataInvestimento, valor: valorInicial }];
+    onSave({ ...v, valorInicial, historico, id: v.id || uid() });
+  };
+
+  return (
+    <>
+      <Field label="Nome do investimento" error={err.nome}>
+        <input className="input" value={v.nome} onChange={(e) => set('nome', e.target.value)} placeholder="Ex.: Tesouro Direto, CDB…" />
+      </Field>
+      <div className="row2">
+        <Field label="Instituição">
+          <input className="input" value={v.instituicao} onChange={(e) => set('instituicao', e.target.value)} placeholder="Ex.: XP, Nubank…" />
+        </Field>
+        <Field label="Tipo">
+          <input className="input" value={v.tipo} onChange={(e) => set('tipo', e.target.value)} placeholder="Ex.: Renda fixa, Ações…" />
+        </Field>
+      </div>
+      <div className="row2">
+        <Field label="Valor investido (R$)" error={err.valorInicial}>
+          <input className="input mono" type="number" min="0" step="0.01" value={v.valorInicial} onChange={(e) => set('valorInicial', e.target.value)} disabled={!!initial} />
+        </Field>
+        <Field label="Data do investimento" error={err.dataInvestimento}>
+          <input className="input" type="date" value={v.dataInvestimento} onChange={(e) => set('dataInvestimento', e.target.value)} disabled={!!initial} />
+        </Field>
+      </div>
+      {initial && <p className="field-hint" style={{ marginTop: -8 }}>Para atualizar o valor atual, use “Atualizar valor” na tela do investimento.</p>}
+      <Field label="Observação">
+        <textarea className="textarea" rows={2} value={v.observacao} onChange={(e) => set('observacao', e.target.value)} />
+      </Field>
+      <ModalFooter onCancel={onCancel} onSave={submit} />
+    </>
+  );
+}
+
+function InvestimentoUpdateForm({ onSave, onCancel }) {
+  const [data, setData] = useState(todayISO());
+  const [valor, setValor] = useState('');
+  const [err, setErr] = useState({});
+
+  const submit = () => {
+    const e = {};
+    if (!data) e.data = 'Informe a data';
+    if (!valor || Number(valor) < 0) e.valor = 'Informe o valor atual';
+    if (Object.keys(e).length) { setErr(e); return; }
+    onSave({ id: uid(), data, valor: Number(valor) });
+  };
+
+  return (
+    <>
+      <div className="row2">
+        <Field label="Data da atualização" error={err.data}>
+          <input className="input" type="date" value={data} onChange={(e) => setData(e.target.value)} />
+        </Field>
+        <Field label="Valor atual (R$)" error={err.valor}>
+          <input className="input mono" type="number" min="0" step="0.01" value={valor} onChange={(e) => setValor(e.target.value)} placeholder="0,00" />
+        </Field>
+      </div>
+      <ModalFooter onCancel={onCancel} onSave={submit} saveLabel="Salvar atualização" />
+    </>
+  );
+}
+
+/* ============================================================
+   HELPERS DE CÁLCULO (usam o mês de referência = competência)
+   ============================================================ */
+function sumBy(arr, key = 'valor') { return arr.reduce((s, x) => s + (Number(x[key]) || 0), 0); }
+function calcGastosFixosMes(data, ym) { return data.gastosFixos.filter((g) => isActiveInMonth(g.dataInicio, g.dataFim, ym)); }
+function calcAssinaturasMes(data, ym) { return data.assinaturas.filter((a) => isActiveInMonth(a.dataInicio, a.dataFim, ym)); }
+function calcParcelasMes(data, ym) {
+  return data.dividas.flatMap((d) => d.parcelas.filter((p) => p.competencia === ym)
+    .map((p) => ({ ...p, dividaId: d.id, dividaNome: d.nome, categoria: d.categoria })));
+}
+function calcReceitasMes(data, ym) { return data.receitas.filter((r) => r.competencia === ym); }
+function calcGastosVariaveisMes(data, ym) { return data.gastosVariaveis.filter((g) => g.competencia === ym); }
+
+function investimentoAsOf(inv, ym) {
+  const hist = [...inv.historico].sort((a, b) => (a.data < b.data ? -1 : 1));
+  let val = null;
+  hist.forEach((h) => { if (dateYM(h.data) <= ym) val = h.valor; });
+  if (val === null && dateYM(inv.dataInvestimento) <= ym) val = inv.valorInicial;
+  return val;
+}
+
+function calcFatura(data, cartaoId, ym) {
+  const itens = [];
+  data.gastosVariaveis.filter((g) => g.formaPagamento === 'Cartão de crédito' && g.cartaoId === cartaoId && g.competencia === ym)
+    .forEach((g) => itens.push({ tipo: 'Gasto variável', desc: g.descricao, valor: g.valor }));
+  data.gastosFixos.filter((g) => g.formaPagamento === 'Cartão de crédito' && g.cartaoId === cartaoId && isActiveInMonth(g.dataInicio, g.dataFim, ym))
+    .forEach((g) => itens.push({ tipo: 'Gasto fixo', desc: g.descricao, valor: g.valor }));
+  data.assinaturas.filter((a) => a.formaPagamento === 'Cartão de crédito' && a.cartaoId === cartaoId && isActiveInMonth(a.dataInicio, a.dataFim, ym))
+    .forEach((a) => itens.push({ tipo: 'Assinatura', desc: a.nome, valor: a.valor }));
+  data.dividas.filter((d) => d.formaPagamento === 'Cartão de crédito' && d.cartaoId === cartaoId)
+    .forEach((d) => d.parcelas.filter((p) => p.competencia === ym)
+      .forEach((p) => itens.push({ tipo: 'Dívida', desc: `${d.nome} (parcela ${p.numero}/${d.qtdParcelas})`, valor: p.valor })));
+  return { itens, total: sumBy(itens) };
+}
+
+function DeleteButton({ onDelete, label = 'Excluir?' }) {
+  const [confirming, setConfirming] = useState(false);
+  if (confirming) return <ConfirmInline text={label} onConfirm={onDelete} onCancel={() => setConfirming(false)} />;
+  return <button type="button" className="icon-btn icon-btn-danger" onClick={() => setConfirming(true)}><Trash2 size={15} /></button>;
+}
+
+/* ============================================================
+   DASHBOARD
+   ============================================================ */
+function DashboardView({ data, ym, setYm }) {
+  const receitasMes = calcReceitasMes(data, ym);
+  const fixosMes = calcGastosFixosMes(data, ym);
+  const variaveisMes = calcGastosVariaveisMes(data, ym);
+  const assinaturasMes = calcAssinaturasMes(data, ym);
+  const parcelasMes = calcParcelasMes(data, ym);
+
+  const totalReceitas = sumBy(receitasMes);
+  const totalFixos = sumBy(fixosMes);
+  const totalVariaveis = sumBy(variaveisMes);
+  const totalAssinaturas = sumBy(assinaturasMes);
+  const totalDividas = sumBy(parcelasMes);
+  const totalGastos = totalFixos + totalVariaveis + totalAssinaturas + totalDividas;
+  const saldo = totalReceitas - totalGastos;
+  const totalFaturas = sumBy(data.cartoes.map((c) => ({ valor: calcFatura(data, c.id, ym).total })));
+  const totalInvestido = sumBy(data.investimentos.map((inv) => ({ valor: investimentoAsOf(inv, ym) || 0 })));
+
+  const catMap = {};
+  [...fixosMes, ...variaveisMes, ...assinaturasMes, ...parcelasMes].forEach((item) => {
+    const cat = item.categoria || 'Outros';
+    catMap[cat] = (catMap[cat] || 0) + Number(item.valor || 0);
+  });
+  const catEntries = Object.entries(catMap).sort((a, b) => b[1] - a[1]);
+
+  const trend = [];
+  for (let i = 5; i >= 0; i--) {
+    const m = addMonthsYM(ym, -i);
+    const r = sumBy(calcReceitasMes(data, m));
+    const g = sumBy(calcGastosFixosMes(data, m)) + sumBy(calcGastosVariaveisMes(data, m))
+      + sumBy(calcAssinaturasMes(data, m)) + sumBy(calcParcelasMes(data, m));
+    trend.push({ mes: ymShort(m), saldo: +(r - g).toFixed(2) });
+  }
+
+  return (
+    <div className="view">
+      <SectionHeader title="Visão geral" subtitle="Seu resumo financeiro do mês" />
+      <MonthNav ym={ym} setYm={setYm} />
+      <div className="stat-grid">
+        <StatCard label="Receitas" value={brl(totalReceitas)} tone="positive" />
+        <StatCard label="Gastos totais" value={brl(totalGastos)} tone="negative" />
+        <StatCard label="Saldo do mês" value={brl(saldo)} tone={saldo >= 0 ? 'positive' : 'negative'} />
+        <StatCard label="Total investido" value={brl(totalInvestido)} tone="gold" />
+      </div>
+      <div className="stat-grid stat-grid-sm">
+        <StatCard label="Fixos" value={brl(totalFixos)} />
+        <StatCard label="Variáveis" value={brl(totalVariaveis)} />
+        <StatCard label="Assinaturas" value={brl(totalAssinaturas)} />
+        <StatCard label="Dívidas" value={brl(totalDividas)} />
+        <StatCard label="Faturas de cartão" value={brl(totalFaturas)} sub="incluso no total" />
+      </div>
+
+      <div className="panel">
+        <h3 className="panel-title"><TrendingUp size={16} /> Evolução (últimos 6 meses)</h3>
+        <MiniAreaChart data={trend} xKey="mes" yKey="saldo" color="#1F6F54" height={150} />
+      </div>
+
+      <div className="panel">
+        <h3 className="panel-title"><Tag size={16} /> Gastos por categoria</h3>
+        {catEntries.length === 0 ? (
+          <EmptyState icon={Tag} title="Nada por aqui" text="Nenhum gasto lançado neste mês." />
+        ) : (
+          <div className="bar-list">
+            {catEntries.map(([cat, val], i) => <BarRow key={cat} label={cat} value={val} total={totalGastos || 1} color={PALETTE[i % PALETTE.length]} />)}
+          </div>
+        )}
+      </div>
+    </div>
+  );
+}
+
+/* ============================================================
+   RECEITAS
+   ============================================================ */
+function ReceitasView({ data, ym, setYm, categorias, onAdd, onEdit, onDelete }) {
+  const [filtroCat, setFiltroCat] = useState('');
+  const list = data.receitas.filter((r) => r.competencia === ym && (!filtroCat || r.categoria === filtroCat))
+    .sort((a, b) => (a.data < b.data ? -1 : a.data > b.data ? 1 : 0));
+  const total = sumBy(list);
+  return (
+    <div className="view">
+      <SectionHeader title="Receitas" action={<button type="button" className="btn btn-primary btn-sm" onClick={onAdd}><Plus size={15} /> Nova</button>} />
+      <MonthNav ym={ym} setYm={setYm} />
+      <div className="filters-row">
+        <SelectField value={filtroCat} onChange={setFiltroCat} placeholder="Todas as categorias" options={categorias.map((c) => c.nome)} />
+      </div>
+      <div className="total-line"><span>Total do período</span><strong className="mono positive-text">{brl(total)}</strong></div>
+      {list.length === 0 ? (
+        <EmptyState icon={Wallet} title="Nenhuma receita" text="Lance sua primeira receita deste mês." />
+      ) : (
+        <div className="card-list">
+          {list.map((r) => (
+            <div className="entry-card" key={r.id}>
+              <IconCircle tone="positive"><ArrowUpRight size={16} /></IconCircle>
+              <div className="entry-main">
+                <div className="entry-top"><strong>{r.descricao}</strong><span className="mono positive-text">{brl(r.valor)}</span></div>
+                <div className="entry-meta">
+                  <span>{fmtDateBR(r.data)}</span>
+                  <StatusBadge>{r.categoria}</StatusBadge>
+                  <StatusBadge tone="muted">{r.formaRecebimento}</StatusBadge>
+                </div>
+                {r.observacao && <p className="entry-note">{r.observacao}</p>}
+              </div>
+              <ItemActions onEdit={() => onEdit(r.id)} onDelete={() => onDelete(r.id)} />
+            </div>
+          ))}
+        </div>
+      )}
+    </div>
+  );
+}
+
+/* ============================================================
+   GASTOS (fixos / variáveis)
+   ============================================================ */
+function GastosView({ data, ym, setYm, categorias, cartoes, subTab, setSubTab, onAdd, onEdit, onDelete }) {
+  const [filtroCat, setFiltroCat] = useState('');
+  const fixos = data.gastosFixos.filter((g) => isActiveInMonth(g.dataInicio, g.dataFim, ym) && (!filtroCat || g.categoria === filtroCat))
+    .sort((a, b) => (a.dataInicio < b.dataInicio ? -1 : 1));
+  const variaveis = data.gastosVariaveis.filter((g) => g.competencia === ym && (!filtroCat || g.categoria === filtroCat))
+    .sort((a, b) => (a.dataCompra < b.dataCompra ? -1 : a.dataCompra > b.dataCompra ? 1 : 0));
+  const list = subTab === 'fixos' ? fixos : variaveis;
+  const total = sumBy(list);
+  const cartaoNome = (id) => cartoes.find((c) => c.id === id)?.nome || '—';
+
+  return (
+    <div className="view">
+      <SectionHeader title="Gastos" action={<button type="button" className="btn btn-primary btn-sm" onClick={() => onAdd(subTab)}><Plus size={15} /> Novo</button>} />
+      <MonthNav ym={ym} setYm={setYm} />
+      <div className="subtabs">
+        <button type="button" className={'subtab' + (subTab === 'fixos' ? ' active' : '')} onClick={() => setSubTab('fixos')}>Fixos</button>
+        <button type="button" className={'subtab' + (subTab === 'variaveis' ? ' active' : '')} onClick={() => setSubTab('variaveis')}>Variáveis</button>
+      </div>
+      <div className="filters-row">
+        <SelectField value={filtroCat} onChange={setFiltroCat} placeholder="Todas as categorias" options={categorias.map((c) => c.nome)} />
+      </div>
+      <div className="total-line"><span>Total do período</span><strong className="mono negative-text">{brl(total)}</strong></div>
+      {list.length === 0 ? (
+        <EmptyState icon={Receipt} title={subTab === 'fixos' ? 'Nenhum gasto fixo' : 'Nenhum gasto variável'} text="Adicione um novo lançamento." />
+      ) : (
+        <div className="card-list">
+          {list.map((g) => (
+            <div className="entry-card" key={g.id}>
+              <IconCircle tone="negative"><ArrowDownRight size={16} /></IconCircle>
+              <div className="entry-main">
+                <div className="entry-top"><strong>{g.descricao}</strong><span className="mono negative-text">{brl(g.valor)}</span></div>
+                <div className="entry-meta">
+                  {subTab === 'fixos' ? (
+                    <span>{ymShort(g.dataInicio)} – {g.dataFim ? ymShort(g.dataFim) : 'sem fim'}</span>
+                  ) : (
+                    <span>{fmtDateBR(g.dataCompra)} · comp. {ymShort(g.competencia)}</span>
+                  )}
+                  <StatusBadge>{g.categoria}</StatusBadge>
+                  <StatusBadge tone="muted">{g.formaPagamento === 'Cartão de crédito' ? `Cartão · ${cartaoNome(g.cartaoId)}` : g.formaPagamento}</StatusBadge>
+                </div>
+                {g.observacao && <p className="entry-note">{g.observacao}</p>}
+              </div>
+              <ItemActions
+                onEdit={() => onEdit(subTab === 'fixos' ? 'gastoFixo' : 'gastoVariavel', g.id)}
+                onDelete={() => onDelete(subTab === 'fixos' ? 'gastosFixos' : 'gastosVariaveis', g.id)} />
+            </div>
+          ))}
+        </div>
+      )}
+    </div>
+  );
+}
+
+/* ============================================================
+   ASSINATURAS
+   ============================================================ */
+function AssinaturasView({ data, ym, setYm, cartoes, onAdd, onEdit, onDelete }) {
+  const [expanded, setExpanded] = useState(null);
+  const list = [...data.assinaturas].sort((a, b) => (a.dataInicio < b.dataInicio ? -1 : 1));
+  const ativas = list.filter((a) => isActiveInMonth(a.dataInicio, a.dataFim, ym));
+  const totalAtivas = sumBy(ativas);
+  const cartaoNome = (id) => cartoes.find((c) => c.id === id)?.nome || '—';
+
+  const historicoDe = (a) => {
+    const fimHist = a.dataFim && cmpYM(a.dataFim, todayYM()) < 0 ? a.dataFim : todayYM();
+    const meses = [];
+    let m = a.dataInicio;
+    let guard = 0;
+    while (cmpYM(m, fimHist) <= 0 && guard < 240) { meses.push(m); m = addMonthsYM(m, 1); guard++; }
+    return meses.reverse();
+  };
+
+  return (
+    <div className="view">
+      <SectionHeader title="Assinaturas" action={<button type="button" className="btn btn-primary btn-sm" onClick={onAdd}><Plus size={15} /> Nova</button>} />
+      <MonthNav ym={ym} setYm={setYm} />
+      <div className="total-line"><span>Total ativas no mês</span><strong className="mono negative-text">{brl(totalAtivas)}</strong></div>
+      {list.length === 0 ? (
+        <EmptyState icon={Repeat} title="Nenhuma assinatura" text="Cadastre suas assinaturas recorrentes." />
+      ) : (
+        <div className="card-list">
+          {list.map((a) => {
+            const ativa = isActiveInMonth(a.dataInicio, a.dataFim, ym);
+            const isOpen = expanded === a.id;
+            return (
+              <div className="entry-card entry-card-click" key={a.id}>
+                <div className="entry-clickzone" onClick={() => setExpanded(isOpen ? null : a.id)}>
+                  <IconCircle tone={ativa ? 'negative' : 'muted'}><Repeat size={16} /></IconCircle>
+                  <div className="entry-main">
+                    <div className="entry-top"><strong>{a.nome}</strong><span className="mono negative-text">{brl(a.valor)}</span></div>
+                    <div className="entry-meta">
+                      <span>Cobrança dia {a.diaCobranca}</span>
+                      <StatusBadge>{a.categoria}</StatusBadge>
+                      <StatusBadge tone={ativa ? 'default' : 'muted'}>{ativa ? 'Ativa' : 'Inativa no mês'}</StatusBadge>
+                    </div>
+                  </div>
+                  <ChevronDown size={16} className={'chev' + (isOpen ? ' chev-open' : '')} />
+                </div>
+                {isOpen && (
+                  <div className="entry-expand">
+                    <div className="entry-meta" style={{ marginBottom: 8 }}>
+                      <span>Início: {ymShort(a.dataInicio)}</span>
+                      <span>Término: {a.dataFim ? ymShort(a.dataFim) : 'em aberto'}</span>
+                      <span>{a.formaPagamento === 'Cartão de crédito' ? `Cartão · ${cartaoNome(a.cartaoId)}` : a.formaPagamento}</span>
+                    </div>
+                    {a.observacao && <p className="entry-note">{a.observacao}</p>}
+                    <p className="entry-note" style={{ fontWeight: 600, marginTop: 8 }}>Histórico de cobranças</p>
+                    <div className="mini-history">
+                      {historicoDe(a).map((m) => (
+                        <div key={m} className="mini-history-row"><span>{ymLabel(m)}</span><span className="mono">{brl(a.valor)}</span></div>
+                      ))}
+                    </div>
+                    <div className="item-actions" style={{ marginTop: 10 }}>
+                      <button type="button" className="icon-btn" onClick={() => onEdit('assinatura', a.id)}><Pencil size={15} /></button>
+                      <DeleteButton onDelete={() => onDelete('assinaturas', a.id)} />
+                    </div>
+                  </div>
+                )}
+              </div>
+            );
+          })}
+        </div>
+      )}
+    </div>
+  );
+}
+
+/* ============================================================
+   DÍVIDAS
+   ============================================================ */
+function DividasView({ data, ym, setYm, cartoes, onAdd, onEdit, onDelete, onTogglePaga }) {
+  const cartaoNome = (id) => cartoes.find((c) => c.id === id)?.nome || '—';
+  const [expanded, setExpanded] = useState(null);
+  const withFim = [...data.dividas].map((d) => ({ ...d, fim: d.parcelas.length ? d.parcelas[d.parcelas.length - 1].competencia : d.dataInicio }))
+    .sort((a, b) => (a.dataInicio < b.dataInicio ? -1 : 1));
+  const ativas = withFim.filter((d) => cmpYM(ym, d.fim) <= 0);
+  const encerradas = withFim.filter((d) => cmpYM(ym, d.fim) > 0);
+  const totalParcelasMes = sumBy(calcParcelasMes(data, ym));
+
+  const renderDivida = (d) => {
+    const isOpen = expanded === d.id;
+    const pagas = d.parcelas.filter((p) => p.paga).length;
+    const encerrada = cmpYM(ym, d.fim) > 0;
+    return (
+      <div className="entry-card entry-card-click" key={d.id}>
+        <div className="entry-clickzone" onClick={() => setExpanded(isOpen ? null : d.id)}>
+          <IconCircle tone={encerrada ? 'muted' : 'negative'}><Landmark size={16} /></IconCircle>
+          <div className="entry-main">
+            <div className="entry-top"><strong>{d.nome}</strong><span className="mono negative-text">{brl(d.valorTotal)}</span></div>
+            <div className="entry-meta">
+              <span>{pagas}/{d.qtdParcelas} parcelas pagas</span>
+              <StatusBadge>{d.categoria}</StatusBadge>
+              <StatusBadge tone={encerrada ? 'muted' : 'default'}>{encerrada ? 'Encerrada' : 'Ativa'}</StatusBadge>
+            </div>
+          </div>
+          <ChevronDown size={16} className={'chev' + (isOpen ? ' chev-open' : '')} />
+        </div>
+        {isOpen && (
+          <div className="entry-expand">
+            <div className="entry-meta" style={{ marginBottom: 8 }}>
+              <span>Início: {ymShort(d.dataInicio)}</span>
+              <span>Término previsto: {ymShort(d.fim)}</span>
+              <span>{d.formaPagamento === 'Cartão de crédito' ? `Cartão · ${cartaoNome(d.cartaoId)}` : d.formaPagamento}</span>
+            </div>
+            {d.observacao && <p className="entry-note">{d.observacao}</p>}
+            <div className="parcelas-list">
+              {d.parcelas.map((p) => (
+                <label key={p.id} className={'parcela-row' + (p.paga ? ' paga' : '')}>
+                  <input type="checkbox" checked={p.paga} onChange={() => onTogglePaga(d.id, p.id)} />
+                  <span>Parcela {p.numero}/{d.qtdParcelas} · {ymLabel(p.competencia)}</span>
+                  <span className="mono">{brl(p.valor)}</span>
+                </label>
+              ))}
+            </div>
+            <div className="item-actions" style={{ marginTop: 10 }}>
+              <button type="button" className="icon-btn" onClick={() => onEdit('divida', d.id)}><Pencil size={15} /></button>
+              <DeleteButton onDelete={() => onDelete('dividas', d.id)} />
+            </div>
+          </div>
+        )}
+      </div>
+    );
+  };
+
+  return (
+    <div className="view">
+      <SectionHeader title="Dívidas" action={<button type="button" className="btn btn-primary btn-sm" onClick={onAdd}><Plus size={15} /> Nova</button>} />
+      <MonthNav ym={ym} setYm={setYm} />
+      <div className="total-line"><span>Parcelas neste mês</span><strong className="mono negative-text">{brl(totalParcelasMes)}</strong></div>
+      <h4 className="mini-title">Ativas</h4>
+      {ativas.length === 0 ? <EmptyState icon={Landmark} title="Nenhuma dívida ativa" text="Suas dívidas em aberto aparecem aqui." /> : <div className="card-list">{ativas.map(renderDivida)}</div>}
+      {encerradas.length > 0 && (
+        <>
+          <h4 className="mini-title">Encerradas</h4>
+          <div className="card-list">{encerradas.map(renderDivida)}</div>
+        </>
+      )}
+    </div>
+  );
+}
+
+/* ============================================================
+   CARTÕES
+   ============================================================ */
+function CartoesView({ data, ym, setYm, onAdd, onEdit, onDelete }) {
+  const [expanded, setExpanded] = useState(null);
+  return (
+    <div className="view">
+      <SectionHeader title="Cartões" action={<button type="button" className="btn btn-primary btn-sm" onClick={onAdd}><Plus size={15} /> Novo</button>} />
+      <MonthNav ym={ym} setYm={setYm} />
+      {data.cartoes.length === 0 ? (
+        <EmptyState icon={CreditCard} title="Nenhum cartão" text="Cadastre seus cartões para acompanhar as faturas." />
+      ) : (
+        <div className="card-list">
+          {data.cartoes.map((c) => {
+            const fatura = calcFatura(data, c.id, ym);
+            const faturaProx = calcFatura(data, c.id, addMonthsYM(ym, 1));
+            const isOpen = expanded === c.id;
+            return (
+              <div className="entry-card entry-card-click" key={c.id}>
+                <div className="entry-clickzone" onClick={() => setExpanded(isOpen ? null : c.id)}>
+                  <IconCircle tone="gold"><CreditCard size={16} /></IconCircle>
+                  <div className="entry-main">
+                    <div className="entry-top"><strong>{c.nome}</strong><span className="mono negative-text">{brl(fatura.total)}</span></div>
+                    <div className="entry-meta">
+                      <span>Fecha dia {c.diaFechamento} · vence dia {c.diaVencimento}</span>
+                      {c.limite > 0 && <span>Limite {brl(c.limite)}</span>}
+                    </div>
+                  </div>
+                  <ChevronDown size={16} className={'chev' + (isOpen ? ' chev-open' : '')} />
+                </div>
+                {isOpen && (
+                  <div className="entry-expand">
+                    <p className="entry-note" style={{ fontWeight: 600 }}>Fatura de {ymLabel(ym)}</p>
+                    {fatura.itens.length === 0 ? <p className="entry-note">Nenhum lançamento neste mês.</p> : (
+                      <div className="parcelas-list">
+                        {fatura.itens.map((it, idx) => (
+                          <div key={idx} className="parcela-row">
+                            <span>{it.desc} <span className="tag-inline">{it.tipo}</span></span>
+                            <span className="mono">{brl(it.valor)}</span>
+                          </div>
+                        ))}
+                      </div>
+                    )}
+                    <div className="total-line" style={{ marginTop: 8 }}>
+                      <span>Próxima fatura ({ymShort(addMonthsYM(ym, 1))})</span>
+                      <strong className="mono">{brl(faturaProx.total)}</strong>
+                    </div>
+                    <div className="item-actions" style={{ marginTop: 10 }}>
+                      <button type="button" className="icon-btn" onClick={() => onEdit('cartao', c.id)}><Pencil size={15} /></button>
+                      <DeleteButton onDelete={() => onDelete('cartoes', c.id)} />
+                    </div>
+                  </div>
+                )}
+              </div>
+            );
+          })}
+        </div>
+      )}
+    </div>
+  );
+}
+
+/* ============================================================
+   INVESTIMENTOS
+   ============================================================ */
+function InvestimentosView({ data, onAdd, onEdit, onDelete, onUpdateValue }) {
+  const [expanded, setExpanded] = useState(null);
+  const list = [...data.investimentos].sort((a, b) => (a.dataInvestimento < b.dataInvestimento ? -1 : 1));
+  return (
+    <div className="view">
+      <SectionHeader title="Investimentos" subtitle="Acompanhe a evolução mês a mês" action={<button type="button" className="btn btn-primary btn-sm" onClick={onAdd}><Plus size={15} /> Novo</button>} />
+      {list.length === 0 ? (
+        <EmptyState icon={PiggyBank} title="Nenhum investimento" text="Cadastre seus investimentos e acompanhe a evolução." />
+      ) : (
+        <div className="card-list">
+          {list.map((inv) => {
+            const hist = [...inv.historico].sort((a, b) => (a.data < b.data ? -1 : 1));
+            const atual = hist.length ? hist[hist.length - 1].valor : inv.valorInicial;
+            const rent = inv.valorInicial > 0 ? ((atual - inv.valorInicial) / inv.valorInicial) * 100 : 0;
+            const isOpen = expanded === inv.id;
+            const chartData = hist.map((h) => ({ data: ymShort(dateYM(h.data)), valor: h.valor }));
+            return (
+              <div className="entry-card entry-card-click" key={inv.id}>
+                <div className="entry-clickzone" onClick={() => setExpanded(isOpen ? null : inv.id)}>
+                  <IconCircle tone="gold"><PiggyBank size={16} /></IconCircle>
+                  <div className="entry-main">
+                    <div className="entry-top"><strong>{inv.nome}</strong><span className="mono">{brl(atual)}</span></div>
+                    <div className="entry-meta">
+                      <span>{inv.instituicao || 'Sem instituição'}{inv.tipo ? ` · ${inv.tipo}` : ''}</span>
+                      <StatusBadge tone={rent >= 0 ? 'default' : 'negative'}>{rent >= 0 ? '+' : ''}{rent.toFixed(2)}%</StatusBadge>
+                    </div>
+                  </div>
+                  <ChevronDown size={16} className={'chev' + (isOpen ? ' chev-open' : '')} />
+                </div>
+                {isOpen && (
+                  <div className="entry-expand">
+                    <div className="entry-meta" style={{ marginBottom: 8 }}>
+                      <span>Investido: {brl(inv.valorInicial)} em {fmtDateBR(inv.dataInvestimento)}</span>
+                    </div>
+                    {inv.observacao && <p className="entry-note">{inv.observacao}</p>}
+                    {chartData.length > 1 && (
+                      <div style={{ marginTop: 8 }}>
+                        <MiniAreaChart data={chartData} xKey="data" yKey="valor" color="#B08D2B" height={130} />
+                      </div>
+                    )}
+                    <p className="entry-note" style={{ fontWeight: 600, marginTop: 8 }}>Histórico</p>
+                    <div className="mini-history">
+                      {hist.slice().reverse().map((h) => (
+                        <div key={h.id} className="mini-history-row"><span>{fmtDateBR(h.data)}</span><span className="mono">{brl(h.valor)}</span></div>
+                      ))}
+                    </div>
+                    <div className="item-actions" style={{ marginTop: 10, justifyContent: 'space-between' }}>
+                      <button type="button" className="btn btn-ghost btn-sm" onClick={() => onUpdateValue(inv.id)}><TrendingUp size={14} /> Atualizar valor</button>
+                      <div style={{ display: 'flex', gap: 6 }}>
+                        <button type="button" className="icon-btn" onClick={() => onEdit('investimento', inv.id)}><Pencil size={15} /></button>
+                        <DeleteButton onDelete={() => onDelete('investimentos', inv.id)} />
+                      </div>
+                    </div>
+                  </div>
+                )}
+              </div>
+            );
+          })}
+        </div>
+      )}
+    </div>
+  );
+}
+
+/* ============================================================
+   CATEGORIAS
+   ============================================================ */
+function CategoriasView({ data, onAdd, onDelete }) {
+  const usageCount = (nome) => {
+    let n = 0;
+    n += data.receitas.filter((r) => r.categoria === nome).length;
+    n += data.gastosFixos.filter((g) => g.categoria === nome).length;
+    n += data.gastosVariaveis.filter((g) => g.categoria === nome).length;
+    n += data.assinaturas.filter((a) => a.categoria === nome).length;
+    n += data.dividas.filter((d) => d.categoria === nome).length;
+    return n;
+  };
+  const [novo, setNovo] = useState('');
+  const [warn, setWarn] = useState(null);
+  const add = () => {
+    const nome = novo.trim();
+    if (!nome) return;
+    if (data.categorias.some((c) => c.nome.toLowerCase() === nome.toLowerCase())) { setWarn('Essa categoria já existe.'); return; }
+    onAdd(nome); setNovo(''); setWarn(null);
+  };
+  const tryDelete = (cat) => {
+    const n = usageCount(cat.nome);
+    if (n > 0) { setWarn(`"${cat.nome}" está em uso em ${n} lançamento(s). Altere-os antes de excluir.`); return; }
+    onDelete(cat.id);
+  };
+  return (
+    <div className="view">
+      <SectionHeader title="Categorias" subtitle="Usadas em receitas, gastos, dívidas e assinaturas" />
+      <div className="new-cat-row">
+        <input className="input" value={novo} onChange={(e) => setNovo(e.target.value)} placeholder="Nova categoria" onKeyDown={(e) => e.key === 'Enter' && add()} />
+        <button type="button" className="btn btn-primary btn-sm" onClick={add}><Plus size={15} /></button>
+      </div>
+      {warn && <p className="field-error" style={{ marginBottom: 10 }}><AlertCircle size={12} /> {warn}</p>}
+      <div className="chip-list">
+        {data.categorias.map((c) => (
+          <div key={c.id} className="chip">
+            <span>{c.nome}</span>
+            <button type="button" className="chip-x" onClick={() => tryDelete(c)}><X size={12} /></button>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+/* ============================================================
+   CONFIGURAÇÕES / SINCRONIZAÇÃO
+   ============================================================ */
+function ConfigView({ data, status, replaceAll, user, cloudConfigured, signIn, signOutUser }) {
+  const fileRef = useRef(null);
+  const [confirmReset, setConfirmReset] = useState(false);
+
+  const exportar = () => {
+    const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = `minhas-financas-backup-${todayISO()}.json`;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+  };
+
+  const importar = (e) => {
+    const file = e.target.files && e.target.files[0];
+    if (!file) return;
+    const reader = new FileReader();
+    reader.onload = () => {
+      try {
+        const parsed = JSON.parse(reader.result);
+        if (window.confirm('Isso vai substituir todos os dados atuais pelos dados do arquivo. Continuar?')) {
+          replaceAll({ ...defaultData(), ...parsed });
+        }
+      } catch (err) { window.alert('Arquivo inválido.'); }
+    };
+    reader.readAsText(file);
+    e.target.value = '';
+  };
+
+  const counts = {
+    'Receitas': data.receitas.length,
+    'Gastos fixos': data.gastosFixos.length,
+    'Gastos variáveis': data.gastosVariaveis.length,
+    'Assinaturas': data.assinaturas.length,
+    'Dívidas': data.dividas.length,
+    'Cartões': data.cartoes.length,
+    'Investimentos': data.investimentos.length,
+    'Categorias': data.categorias.length,
+  };
+
+  return (
+    <div className="view">
+      <SectionHeader title="Configurações & Sincronização" />
+
+      {!cloudConfigured && (
+        <div className="panel panel-danger">
+          <h3 className="panel-title"><ShieldAlert size={16} /> Sincronização com Google ainda não configurada</h3>
+          <p className="entry-note">
+            Este arquivo já vem pronto para sincronizar entre aparelhos usando sua conta do Google,
+            mas falta colar as chaves do seu projeto Firebase no início do arquivo (procure por
+            <strong> FIREBASE_CONFIG</strong>). Sem isso, os dados ficam salvos apenas
+            <strong> neste navegador, neste aparelho</strong> — use Exportar/Importar backup abaixo
+            para levar os dados de um aparelho para o outro enquanto isso.
+          </p>
+        </div>
+      )}
+
+      {cloudConfigured && !user && (
+        <div className="panel">
+          <h3 className="panel-title"><LogIn size={16} /> Entrar com Google para sincronizar</h3>
+          <p className="entry-note">
+            Você ainda não está logado. Sem login, os dados ficam só neste navegador/aparelho.
+            Entre com sua conta Google para sincronizar automaticamente entre o celular e o computador.
+          </p>
+          <button type="button" className="btn btn-primary btn-sm" style={{ marginTop: 10 }} onClick={signIn}>
+            <LogIn size={14} /> Entrar com Google
+          </button>
+        </div>
+      )}
+
+      {cloudConfigured && user && (
+        <div className="panel">
+          <h3 className="panel-title"><UserCircle size={16} /> Sincronizado com o Google</h3>
+          <p className="entry-note">
+            Logado como <strong>{user.email}</strong>. Os dados são salvos automaticamente na nuvem
+            e atualizados em qualquer aparelho onde você entrar com essa mesma conta — sem precisar
+            exportar/importar nada.
+          </p>
+          <button type="button" className="btn btn-ghost btn-sm" style={{ marginTop: 10 }} onClick={signOutUser}>
+            <LogOut size={14} /> Sair desta conta
+          </button>
+        </div>
+      )}
+
+      <div className="panel">
+        <h3 className="panel-title"><Check size={16} /> Status do salvamento</h3>
+        <div className="status-line">
+          <span>Status atual:</span>
+          {status === 'saving' && <StatusBadge tone="default"><Loader2 size={12} className="spin" /> Salvando…</StatusBadge>}
+          {status === 'saved' && <StatusBadge tone="positive"><Check size={12} /> Salvo{user ? ' na nuvem' : ' neste aparelho'}</StatusBadge>}
+          {status === 'ready' && <StatusBadge tone="positive"><Check size={12} /> Tudo salvo{user ? ' na nuvem' : ' neste aparelho'}</StatusBadge>}
+          {status === 'error' && <StatusBadge tone="negative"><AlertCircle size={12} /> Erro ao salvar — tente novamente</StatusBadge>}
+        </div>
+      </div>
+
+      <div className="panel">
+        <h3 className="panel-title"><ListChecks size={16} /> Resumo dos dados salvos</h3>
+        <div className="mini-history">
+          {Object.entries(counts).map(([k, v]) => (
+            <div key={k} className="mini-history-row"><span>{k}</span><span className="mono">{v}</span></div>
+          ))}
+        </div>
+      </div>
+
+      <div className="panel">
+        <h3 className="panel-title"><Download size={16} /> Backup manual</h3>
+        <p className="entry-note">Exporte um arquivo com tudo o que está salvo agora — guarde-o antes de fazer mudanças grandes. Você pode importar esse arquivo depois para restaurar os dados.</p>
+        <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', marginTop: 10 }}>
+          <button type="button" className="btn btn-secondary btn-sm" onClick={exportar}><Download size={14} /> Exportar backup</button>
+          <button type="button" className="btn btn-secondary btn-sm" onClick={() => fileRef.current && fileRef.current.click()}><Upload size={14} /> Importar backup</button>
+          <input type="file" accept="application/json" ref={fileRef} style={{ display: 'none' }} onChange={importar} />
+        </div>
+      </div>
+
+      <div className="panel panel-danger">
+        <h3 className="panel-title"><ShieldAlert size={16} /> Zona de risco</h3>
+        <p className="entry-note">Apaga todos os lançamentos, cartões, dívidas e investimentos. Essa ação não pode ser desfeita — exporte um backup antes.</p>
+        {!confirmReset ? (
+          <button type="button" className="btn btn-danger btn-sm" style={{ marginTop: 10 }} onClick={() => setConfirmReset(true)}>Apagar todos os dados</button>
+        ) : (
+          <div style={{ display: 'flex', gap: 8, marginTop: 10 }}>
+            <button type="button" className="btn btn-ghost btn-sm" onClick={() => setConfirmReset(false)}>Cancelar</button>
+            <button type="button" className="btn btn-danger btn-sm" onClick={() => { replaceAll(defaultData()); setConfirmReset(false); }}>Confirmar exclusão total</button>
+          </div>
+        )}
+      </div>
+    </div>
+  );
+}
+
+/* ============================================================
+   ESTILO GLOBAL
+   ============================================================ */
+function GlobalStyle() {
+  return (
+    <style>{`
+      @import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,500;8..60,600;8..60,700&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap');
+
+      .financas-root, .financas-root * { box-sizing: border-box; }
+      .financas-root {
+        --paper: #F6F4EE;
+        --surface: #FFFFFF;
+        --border: #E3DFD2;
+        --ink: #1C2430;
+        --ink-soft: #5B6472;
+        --ink-faint: #94A0AC;
+        --brand: #1F6F54;
+        --brand-dark: #17573F;
+        --brand-tint: #E7F1EC;
+        --negative: #A13D2E;
+        --negative-tint: #F7E9E5;
+        --gold: #B08D2B;
+        --gold-tint: #F6EFDD;
+        --muted-tint: #EDEBE3;
+        font-family: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        color: var(--ink);
+        background: var(--paper);
+        min-height: 100vh;
+        -webkit-font-smoothing: antialiased;
+      }
+      .financas-root .mono { font-family: 'IBM Plex Mono', 'SFMono-Regular', Menlo, monospace; font-variant-numeric: tabular-nums; }
+      .financas-root .positive-text { color: var(--brand-dark); }
+      .financas-root .negative-text { color: var(--negative); }
+
+      .app-shell { max-width: 720px; margin: 0 auto; padding-bottom: 96px; min-height: 100vh; }
+
+      .topbar {
+        display: flex; align-items: center; justify-content: space-between;
+        padding: 16px 16px 8px; position: sticky; top: 0; background: var(--paper); z-index: 20;
+      }
+      .topbar-brand {
+        display: flex; align-items: center; gap: 8px;
+        font-family: 'Source Serif 4', Georgia, serif; font-weight: 600; font-size: 19px; color: var(--ink);
+      }
+      .topbar-status { min-width: 0; }
+      .topbar-right { display: flex; align-items: center; gap: 8px; }
+      .account-btn { display: flex; align-items: center; gap: 5px; border: 1px solid var(--border); background: var(--surface); color: var(--ink-soft); border-radius: 20px; padding: 6px 10px; font-size: 11.5px; font-weight: 500; cursor: pointer; }
+      .account-btn-cta { background: var(--ink); color: #fff; border-color: var(--ink); }
+      @media (max-width: 380px) { .account-btn-label { display: none; } .account-btn { padding: 6px; } }
+      .status-pill { display: inline-flex; align-items: center; gap: 5px; font-size: 11px; color: var(--ink-soft); background: var(--surface); border: 1px solid var(--border); padding: 4px 9px; border-radius: 20px; }
+      .status-pill.status-ok { color: var(--brand-dark); border-color: #CFE3D8; }
+      .status-pill.status-err { color: var(--negative); border-color: #E9C9C1; }
+
+      .tabbar {
+        display: flex; gap: 6px; overflow-x: auto; padding: 6px 16px 12px;
+        -webkit-overflow-scrolling: touch; scrollbar-width: none;
+      }
+      .tabbar::-webkit-scrollbar { display: none; }
+      .tab-pill {
+        flex: 0 0 auto; display: flex; align-items: center; gap: 6px;
+        padding: 8px 13px; border-radius: 20px; border: 1px solid var(--border);
+        background: var(--surface); color: var(--ink-soft); font-size: 13px; font-weight: 500;
+        cursor: pointer; white-space: nowrap; transition: background .15s, color .15s, border-color .15s;
+      }
+      .tab-pill.active { background: var(--ink); color: #fff; border-color: var(--ink); }
+
+      .app-main { padding: 4px 16px 24px; }
+      .view { display: flex; flex-direction: column; gap: 14px; }
+
+      .section-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; margin-top: 4px; }
+      .section-header h2 { font-family: 'Source Serif 4', Georgia, serif; font-size: 22px; font-weight: 600; margin: 0; }
+      .section-header p { margin: 2px 0 0; color: var(--ink-soft); font-size: 13px; }
+
+      .month-nav { display: flex; align-items: center; gap: 8px; background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 6px 8px; }
+      .month-nav-label { flex: 1; display: flex; align-items: center; justify-content: center; gap: 6px; font-weight: 600; font-size: 14px; }
+      .btn-link { background: none; border: none; color: var(--brand-dark); font-size: 12px; cursor: pointer; padding: 4px 6px; text-decoration: underline; }
+
+      .stat-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+      .stat-grid-sm { grid-template-columns: repeat(2, 1fr); }
+      .stat-card { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 12px 14px; display: flex; flex-direction: column; gap: 4px; }
+      .stat-label { font-size: 12px; color: var(--ink-soft); }
+      .stat-value { font-family: 'IBM Plex Mono', monospace; font-size: 18px; font-weight: 600; font-variant-numeric: tabular-nums; }
+      .stat-sub { font-size: 10.5px; color: var(--ink-faint); }
+      .stat-card.tone-positive .stat-value { color: var(--brand-dark); }
+      .stat-card.tone-negative .stat-value { color: var(--negative); }
+      .stat-card.tone-gold .stat-value { color: var(--gold); }
+
+      .panel { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 14px; }
+      .panel-danger { border-color: #E9C9C1; background: #FBF3F1; }
+      .panel-title { display: flex; align-items: center; gap: 7px; font-size: 14px; font-weight: 600; margin: 0 0 10px; }
+
+      .bar-list { display: flex; flex-direction: column; gap: 10px; }
+      .bar-row-top { display: flex; justify-content: space-between; font-size: 12.5px; margin-bottom: 4px; }
+      .bar-track { height: 7px; background: var(--muted-tint); border-radius: 6px; overflow: hidden; }
+      .bar-fill { height: 100%; border-radius: 6px; }
+
+      .filters-row { display: flex; gap: 8px; }
+      .total-line { display: flex; align-items: center; justify-content: space-between; background: var(--surface); border: 1px dashed var(--border); border-radius: 10px; padding: 10px 12px; font-size: 13px; color: var(--ink-soft); }
+      .total-line strong { font-size: 15px; }
+
+      .subtabs { display: flex; gap: 8px; }
+      .subtab { flex: 1; padding: 8px; border-radius: 10px; border: 1px solid var(--border); background: var(--surface); color: var(--ink-soft); font-size: 13px; font-weight: 500; cursor: pointer; }
+      .subtab.active { background: var(--ink); border-color: var(--ink); color: #fff; }
+
+      .card-list { display: flex; flex-direction: column; gap: 8px; }
+      .entry-card { background: var(--surface); border: 1px solid var(--border); border-radius: 13px; padding: 12px; display: flex; gap: 10px; align-items: flex-start; }
+      .entry-card-click { flex-direction: column; padding: 0; }
+      .entry-clickzone { display: flex; gap: 10px; align-items: center; padding: 12px; cursor: pointer; width: 100%; }
+      .entry-main { flex: 1; min-width: 0; }
+      .entry-top { display: flex; justify-content: space-between; gap: 8px; align-items: baseline; }
+      .entry-top strong { font-size: 14.5px; font-weight: 600; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+      .entry-top span { flex: 0 0 auto; font-weight: 600; font-size: 14px; }
+      .entry-meta { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; margin-top: 5px; font-size: 12px; color: var(--ink-soft); }
+      .entry-note { font-size: 12.5px; color: var(--ink-soft); margin: 6px 0 0; line-height: 1.4; }
+      .entry-expand { padding: 0 14px 14px; border-top: 1px solid var(--border); margin-top: 0; padding-top: 12px; }
+      .chev { color: var(--ink-faint); transition: transform .15s; flex: 0 0 auto; }
+      .chev-open { transform: rotate(180deg); }
+
+      .icon-circle { width: 34px; height: 34px; border-radius: 10px; display: flex; align-items: center; justify-content: center; flex: 0 0 auto; background: var(--muted-tint); color: var(--ink-soft); }
+      .icon-circle.tone-positive { background: var(--brand-tint); color: var(--brand-dark); }
+      .icon-circle.tone-negative { background: var(--negative-tint); color: var(--negative); }
+      .icon-circle.tone-gold { background: var(--gold-tint); color: var(--gold); }
+      .icon-circle.tone-muted { background: var(--muted-tint); color: var(--ink-faint); }
+
+      .badge { display: inline-flex; align-items: center; gap: 4px; font-size: 10.5px; font-weight: 500; padding: 3px 8px; border-radius: 20px; background: var(--muted-tint); color: var(--ink-soft); }
+      .badge-positive { background: var(--brand-tint); color: var(--brand-dark); }
+      .badge-negative { background: var(--negative-tint); color: var(--negative); }
+      .badge-muted { background: var(--muted-tint); color: var(--ink-faint); }
+
+      .item-actions { display: flex; gap: 6px; flex: 0 0 auto; }
+      .icon-btn { width: 30px; height: 30px; border-radius: 8px; border: 1px solid var(--border); background: var(--surface); color: var(--ink-soft); display: flex; align-items: center; justify-content: center; cursor: pointer; }
+      .icon-btn:hover { background: var(--muted-tint); }
+      .icon-btn-danger:hover { background: var(--negative-tint); color: var(--negative); border-color: #E9C9C1; }
+
+      .confirm-inline { display: flex; align-items: center; justify-content: space-between; gap: 8px; background: var(--negative-tint); border-radius: 8px; padding: 6px 8px; font-size: 12px; color: var(--negative); }
+      .confirm-actions { display: flex; gap: 6px; flex: 0 0 auto; }
+
+      .empty-state { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; padding: 32px 16px; color: var(--ink-faint); background: var(--surface); border: 1px dashed var(--border); border-radius: 14px; text-align: center; }
+      .empty-state strong { color: var(--ink-soft); font-size: 14px; font-weight: 600; }
+      .empty-state span { font-size: 12.5px; max-width: 260px; }
+
+      .mini-title { font-size: 12px; text-transform: none; color: var(--ink-soft); font-weight: 600; margin: 4px 0 -4px; }
+      .mini-history { display: flex; flex-direction: column; gap: 6px; }
+      .mini-history-row { display: flex; justify-content: space-between; font-size: 12.5px; padding: 5px 0; border-bottom: 1px solid var(--border); }
+      .mini-history-row:last-child { border-bottom: none; }
+
+      .parcelas-list { display: flex; flex-direction: column; gap: 4px; }
+      .parcela-row { display: flex; align-items: center; gap: 8px; font-size: 12.5px; padding: 6px 0; border-bottom: 1px solid var(--border); }
+      .parcela-row:last-child { border-bottom: none; }
+      .parcela-row span:nth-child(2) { flex: 1; }
+      .parcela-row.paga span:nth-child(2) { text-decoration: line-through; color: var(--ink-faint); }
+      .parcela-row input[type=checkbox] { accent-color: var(--brand); width: 15px; height: 15px; }
+      .tag-inline { font-size: 10px; color: var(--ink-faint); }
+
+      .chip-list { display: flex; flex-wrap: wrap; gap: 8px; }
+      .chip { display: flex; align-items: center; gap: 6px; background: var(--surface); border: 1px solid var(--border); border-radius: 20px; padding: 6px 6px 6px 12px; font-size: 12.5px; }
+      .chip-x { width: 18px; height: 18px; border-radius: 50%; border: none; background: var(--muted-tint); color: var(--ink-soft); display: flex; align-items: center; justify-content: center; cursor: pointer; }
+      .new-cat-row { display: flex; gap: 8px; }
+
+      .status-line { display: flex; align-items: center; gap: 8px; font-size: 12.5px; color: var(--ink-soft); margin-top: 10px; }
+
+      /* Formulários */
+      .field { display: flex; flex-direction: column; gap: 5px; margin-bottom: 12px; }
+      .field-label { font-size: 12px; font-weight: 600; color: var(--ink-soft); }
+      .field-hint { font-size: 11px; color: var(--ink-faint); }
+      .field-error { font-size: 11px; color: var(--negative); display: flex; align-items: center; gap: 4px; }
+      .row2 { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+      .input, .select, .textarea {
+        width: 100%; border: 1px solid var(--border); border-radius: 9px; padding: 10px 11px;
+        font-size: 14px; font-family: inherit; color: var(--ink); background: var(--surface);
+      }
+      .input:focus, .select:focus, .textarea:focus { outline: 2px solid var(--brand); outline-offset: 1px; border-color: var(--brand); }
+      .textarea { resize: vertical; min-height: 54px; }
+
+      .btn { display: inline-flex; align-items: center; gap: 6px; justify-content: center; padding: 10px 16px; border-radius: 10px; font-size: 13.5px; font-weight: 600; border: 1px solid transparent; cursor: pointer; }
+      .btn-sm { padding: 7px 12px; font-size: 12.5px; }
+      .btn-primary { background: var(--ink); color: #fff; }
+      .btn-primary:hover { background: #0F151D; }
+      .btn-secondary { background: var(--surface); border-color: var(--border); color: var(--ink); }
+      .btn-ghost { background: transparent; border-color: var(--border); color: var(--ink-soft); }
+      .btn-danger { background: var(--negative); color: #fff; }
+
+      .modal-overlay { position: fixed; inset: 0; background: rgba(28,36,48,0.42); display: flex; align-items: flex-end; justify-content: center; z-index: 100; }
+      .modal-sheet, .quick-sheet { background: var(--paper); width: 100%; max-width: 560px; max-height: 88vh; overflow-y: auto; border-radius: 18px 18px 0 0; padding: 4px 0 0; animation: slideUp .18s ease-out; }
+      .modal-wide { max-width: 640px; }
+      @keyframes slideUp { from { transform: translateY(24px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+      .modal-head { display: flex; align-items: flex-start; justify-content: space-between; padding: 18px 18px 10px; position: sticky; top: 0; background: var(--paper); }
+      .modal-head h3 { font-family: 'Source Serif 4', Georgia, serif; font-size: 19px; margin: 0; font-weight: 600; }
+      .modal-subtitle { margin: 3px 0 0; font-size: 12.5px; color: var(--ink-soft); }
+      .modal-body { padding: 4px 18px 12px; }
+      .modal-footer { display: flex; gap: 10px; justify-content: flex-end; padding: 6px 0 16px; position: sticky; bottom: 0; background: var(--paper); }
+
+      .quick-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; padding: 6px 18px 22px; }
+      .quick-opt { display: flex; flex-direction: column; align-items: center; gap: 8px; background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 14px 6px; cursor: pointer; font-size: 12px; color: var(--ink); font-weight: 500; }
+      .quick-opt:hover { border-color: var(--ink); }
+
+      .fab { position: fixed; right: 20px; bottom: 24px; width: 54px; height: 54px; border-radius: 50%; background: var(--brand); color: #fff; border: none; box-shadow: 0 8px 20px rgba(31,111,84,0.35); display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 40; }
+      .fab:hover { background: var(--brand-dark); }
+
+      .loading-screen { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; min-height: 100vh; color: var(--ink-soft); font-size: 13px; }
+      .chart-empty { font-size: 12.5px; color: var(--ink-faint); padding: 20px 0; text-align: center; }
+      .chart-labels { display: flex; justify-content: space-between; margin-top: 2px; font-size: 10px; color: var(--ink-faint); }
+      .spin { animation: spin 1s linear infinite; }
+      @keyframes spin { to { transform: rotate(360deg); } }
+
+      @media (min-width: 720px) {
+        .app-shell { max-width: 880px; padding-top: 8px; }
+        .stat-grid { grid-template-columns: repeat(4, 1fr); }
+        .stat-grid-sm { grid-template-columns: repeat(5, 1fr); }
+        .tabbar { overflow-x: visible; flex-wrap: wrap; }
+        .quick-grid { grid-template-columns: repeat(6, 1fr); }
+        .modal-overlay { align-items: center; }
+        .modal-sheet, .quick-sheet { border-radius: 18px; max-height: 84vh; }
+      }
+    `}</style>
+  );
+}
+
+/* ============================================================
+   APP
+   ============================================================ */
+const TABS = [
+  { key: 'dashboard', label: 'Visão geral', icon: LayoutDashboard },
+  { key: 'receitas', label: 'Receitas', icon: Wallet },
+  { key: 'gastos', label: 'Gastos', icon: Receipt },
+  { key: 'assinaturas', label: 'Assinaturas', icon: Repeat },
+  { key: 'dividas', label: 'Dívidas', icon: Landmark },
+  { key: 'cartoes', label: 'Cartões', icon: CreditCard },
+  { key: 'investimentos', label: 'Investimentos', icon: PiggyBank },
+  { key: 'categorias', label: 'Categorias', icon: Tag },
+  { key: 'config', label: 'Config.', icon: Settings2 },
+];
+
+const QUICK_OPTIONS = [
+  { type: 'receita', label: 'Receita', icon: ArrowUpRight, tone: 'positive' },
+  { type: 'gastoFixo', label: 'Gasto fixo', icon: Receipt, tone: 'negative' },
+  { type: 'gastoVariavel', label: 'Gasto variável', icon: ArrowDownRight, tone: 'negative' },
+  { type: 'assinatura', label: 'Assinatura', icon: Repeat, tone: 'negative' },
+  { type: 'divida', label: 'Dívida', icon: Landmark, tone: 'negative' },
+  { type: 'investimento', label: 'Investimento', icon: PiggyBank, tone: 'gold' },
+];
+
+function App() {
+  const { data, status, persist, replaceAll, user, cloudConfigured, signIn, signOutUser } = useFinanceData();
+  const [tab, setTab] = useState('dashboard');
+  const [ym, setYm] = useState(todayYM());
+  const [gastoSubTab, setGastoSubTab] = useState('fixos');
+  const [modal, setModal] = useState(null);
+  const [quickOpen, setQuickOpen] = useState(false);
+
+  const openModal = (type, id = null) => setModal({ type, id });
+  const closeModal = () => setModal(null);
+
+  if (!data) {
+    return (
+      <div className="financas-root">
+        <GlobalStyle />
+        <LoadingScreen />
+      </div>
+    );
+  }
+
+  const update = (patch) => persist({ ...data, ...patch });
+  const addItem = (key, item) => update({ [key]: [...data[key], item] });
+  const editItem = (key, id, patch) => update({ [key]: data[key].map((it) => (it.id === id ? { ...it, ...patch } : it)) });
+  const removeItem = (key, id) => update({ [key]: data[key].filter((it) => it.id !== id) });
+  const addCategoria = (nome) => addItem('categorias', { id: uid(), nome });
+  const togglePagaParcela = (dividaId, parcelaId) => {
+    update({
+      dividas: data.dividas.map((d) => (d.id !== dividaId ? d : {
+        ...d, parcelas: d.parcelas.map((p) => (p.id === parcelaId ? { ...p, paga: !p.paga } : p)),
+      })),
+    });
+  };
+
+  const renderModal = () => {
+    if (!modal) return null;
+    const { type: t, id } = modal;
+    if (t === 'receita') {
+      const initial = id ? data.receitas.find((x) => x.id === id) : null;
+      return (
+        <Modal title={initial ? 'Editar receita' : 'Nova receita'} onClose={closeModal}>
+          <ReceitaForm initial={initial} categorias={data.categorias} onCancel={closeModal}
+            onSave={(item) => { initial ? editItem('receitas', item.id, item) : addItem('receitas', item); closeModal(); }} />
+        </Modal>
+      );
+    }
+    if (t === 'gastoFixo') {
+      const initial = id ? data.gastosFixos.find((x) => x.id === id) : null;
+      return (
+        <Modal title={initial ? 'Editar gasto fixo' : 'Novo gasto fixo'} onClose={closeModal}>
+          <GastoFixoForm initial={initial} categorias={data.categorias} cartoes={data.cartoes} onCancel={closeModal}
+            onSave={(item) => { initial ? editItem('gastosFixos', item.id, item) : addItem('gastosFixos', item); closeModal(); }} />
+        </Modal>
+      );
+    }
+    if (t === 'gastoVariavel') {
+      const initial = id ? data.gastosVariaveis.find((x) => x.id === id) : null;
+      return (
+        <Modal title={initial ? 'Editar gasto variável' : 'Novo gasto variável'} onClose={closeModal}>
+          <GastoVariavelForm initial={initial} categorias={data.categorias} cartoes={data.cartoes} onCancel={closeModal}
+            onSave={(item) => { initial ? editItem('gastosVariaveis', item.id, item) : addItem('gastosVariaveis', item); closeModal(); }} />
+        </Modal>
+      );
+    }
+    if (t === 'assinatura') {
+      const initial = id ? data.assinaturas.find((x) => x.id === id) : null;
+      return (
+        <Modal title={initial ? 'Editar assinatura' : 'Nova assinatura'} onClose={closeModal}>
+          <AssinaturaForm initial={initial} categorias={data.categorias} cartoes={data.cartoes} onCancel={closeModal}
+            onSave={(item) => { initial ? editItem('assinaturas', item.id, item) : addItem('assinaturas', item); closeModal(); }} />
+        </Modal>
+      );
+    }
+    if (t === 'divida') {
+      const initial = id ? data.dividas.find((x) => x.id === id) : null;
+      return (
+        <Modal title={initial ? 'Editar dívida' : 'Nova dívida'} onClose={closeModal}>
+          <DividaForm initial={initial} categorias={data.categorias} cartoes={data.cartoes} onCancel={closeModal}
+            onSave={(item) => { initial ? editItem('dividas', item.id, item) : addItem('dividas', item); closeModal(); }} />
+        </Modal>
+      );
+    }
+    if (t === 'cartao') {
+      const initial = id ? data.cartoes.find((x) => x.id === id) : null;
+      return (
+        <Modal title={initial ? 'Editar cartão' : 'Novo cartão'} onClose={closeModal}>
+          <CartaoForm initial={initial} onCancel={closeModal}
+            onSave={(item) => { initial ? editItem('cartoes', item.id, item) : addItem('cartoes', item); closeModal(); }} />
+        </Modal>
+      );
+    }
+    if (t === 'investimento') {
+      const initial = id ? data.investimentos.find((x) => x.id === id) : null;
+      return (
+        <Modal title={initial ? 'Editar investimento' : 'Novo investimento'} onClose={closeModal}>
+          <InvestimentoForm initial={initial} categorias={data.categorias} onCancel={closeModal}
+            onSave={(item) => { initial ? editItem('investimentos', item.id, item) : addItem('investimentos', item); closeModal(); }} />
+        </Modal>
+      );
+    }
+    if (t === 'investimentoUpdate') {
+      const inv = data.investimentos.find((x) => x.id === id);
+      if (!inv) return null;
+      return (
+        <Modal title={`Atualizar valor · ${inv.nome}`} subtitle="Cada atualização fica salva no histórico — nada é substituído." onClose={closeModal}>
+          <InvestimentoUpdateForm onCancel={closeModal}
+            onSave={(entry) => { editItem('investimentos', inv.id, { historico: [...inv.historico, entry] }); closeModal(); }} />
+        </Modal>
+      );
+    }
+    return null;
+  };
+
+  return (
+    <div className="financas-root">
+      <GlobalStyle />
+      <div className="app-shell">
+        <header className="topbar">
+          <div className="topbar-brand"><Wallet2 size={20} /><span>Minhas Finanças</span></div>
+          <div className="topbar-right">
+            <div className="topbar-status">
+              {status === 'saving' && <span className="status-pill"><Loader2 size={12} className="spin" /> salvando</span>}
+              {status === 'saved' && <span className="status-pill status-ok"><Check size={12} /> salvo{user ? ' na nuvem' : ''}</span>}
+              {status === 'error' && <span className="status-pill status-err"><AlertCircle size={12} /> erro</span>}
+            </div>
+            {cloudConfigured && (
+              user ? (
+                <button type="button" className="account-btn" onClick={signOutUser} title={user.email}>
+                  <UserCircle size={16} /><span className="account-btn-label">Sair</span>
+                </button>
+              ) : (
+                <button type="button" className="account-btn account-btn-cta" onClick={signIn}>
+                  <LogIn size={15} /><span className="account-btn-label">Entrar com Google</span>
+                </button>
+              )
+            )}
+          </div>
+        </header>
+
+        <nav className="tabbar">
+          {TABS.map((t) => {
+            const Icon = t.icon;
+            return (
+              <button key={t.key} type="button" className={'tab-pill' + (tab === t.key ? ' active' : '')} onClick={() => setTab(t.key)}>
+                <Icon size={15} /><span>{t.label}</span>
+              </button>
+            );
+          })}
+        </nav>
+
+        <main className="app-main">
+          {tab === 'dashboard' && <DashboardView data={data} ym={ym} setYm={setYm} />}
+          {tab === 'receitas' && (
+            <ReceitasView data={data} ym={ym} setYm={setYm} categorias={data.categorias}
+              onAdd={() => openModal('receita')} onEdit={(id) => openModal('receita', id)} onDelete={(id) => removeItem('receitas', id)} />
+          )}
+          {tab === 'gastos' && (
+            <GastosView data={data} ym={ym} setYm={setYm} categorias={data.categorias} cartoes={data.cartoes}
+              subTab={gastoSubTab} setSubTab={setGastoSubTab}
+              onAdd={(sub) => openModal(sub === 'fixos' ? 'gastoFixo' : 'gastoVariavel')}
+              onEdit={(type, id) => openModal(type, id)}
+              onDelete={(key, id) => removeItem(key, id)} />
+          )}
+          {tab === 'assinaturas' && (
+            <AssinaturasView data={data} ym={ym} setYm={setYm} cartoes={data.cartoes}
+              onAdd={() => openModal('assinatura')} onEdit={(type, id) => openModal(type, id)} onDelete={(key, id) => removeItem(key, id)} />
+          )}
+          {tab === 'dividas' && (
+            <DividasView data={data} ym={ym} setYm={setYm} cartoes={data.cartoes}
+              onAdd={() => openModal('divida')} onEdit={(type, id) => openModal(type, id)} onDelete={(key, id) => removeItem(key, id)}
+              onTogglePaga={togglePagaParcela} />
+          )}
+          {tab === 'cartoes' && (
+            <CartoesView data={data} ym={ym} setYm={setYm}
+              onAdd={() => openModal('cartao')} onEdit={(type, id) => openModal(type, id)} onDelete={(key, id) => removeItem(key, id)} />
+          )}
+          {tab === 'investimentos' && (
+            <InvestimentosView data={data}
+              onAdd={() => openModal('investimento')} onEdit={(type, id) => openModal(type, id)} onDelete={(key, id) => removeItem(key, id)}
+              onUpdateValue={(id) => openModal('investimentoUpdate', id)} />
+          )}
+          {tab === 'categorias' && <CategoriasView data={data} onAdd={addCategoria} onDelete={(id) => removeItem('categorias', id)} />}
+          {tab === 'config' && <ConfigView data={data} status={status} replaceAll={replaceAll} user={user} cloudConfigured={cloudConfigured} signIn={signIn} signOutUser={signOutUser} />}
+        </main>
+
+        <button type="button" className="fab" onClick={() => setQuickOpen(true)} aria-label="Adicionar lançamento"><Plus size={22} /></button>
+
+        {quickOpen && (
+          <div className="modal-overlay" onClick={() => setQuickOpen(false)}>
+            <div className="quick-sheet" onClick={(e) => e.stopPropagation()}>
+              <div className="modal-head">
+                <h3>Adicionar lançamento</h3>
+                <button type="button" className="icon-btn" onClick={() => setQuickOpen(false)}><X size={18} /></button>
+              </div>
+              <div className="quick-grid">
+                {QUICK_OPTIONS.map((o) => {
+                  const Icon = o.icon;
+                  return (
+                    <button key={o.type} type="button" className="quick-opt" onClick={() => { setQuickOpen(false); openModal(o.type); }}>
+                      <IconCircle tone={o.tone}><Icon size={18} /></IconCircle>
+                      <span>{o.label}</span>
+                    </button>
+                  );
+                })}
+              </div>
+            </div>
+          </div>
+        )}
+
+        {renderModal()}
+      </div>
+    </div>
+  );
+}
+
+const rootEl = document.getElementById('root');
+ReactDOM.createRoot(rootEl).render(<App />);
+
+</script>
+<script>
+  (function () {
+    var code = document.getElementById('app-source').textContent;
+    var result = Babel.transform(code, {
+      presets: [['react', { runtime: 'classic' }]]
+    });
+    var s = document.createElement('script');
+    s.textContent = result.code;
+    document.body.appendChild(s);
+  })();
+</script>
+</body>
+</html>
